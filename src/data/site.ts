@@ -23,10 +23,10 @@ export const site = {
     email: '',
   },
   downloads: {
-    // 阿里云轻量服务器直链；文件名使用 URL 编码，浏览器下载时仍是 启动器.zip
+    // 阿里云 HTTP 中转页；由中转页自动跳转到启动器 zip，避免 HTTPS 页面直接下载 HTTP 文件
     quark: '',
     baidu: '',
-    direct: 'http://120.27.195.200/downloads/%E5%90%AF%E5%8A%A8%E5%99%A8.zip',
+    direct: 'http://120.27.195.200/download.html',
   },
   contact: {
     // TODO: 作者联系方式定下来后填 link（QQ/邮箱/其他）
