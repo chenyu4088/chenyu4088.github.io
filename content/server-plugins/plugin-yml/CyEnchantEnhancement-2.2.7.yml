@@ -1,0 +1,17 @@
+name: CyEnchantEnhancement
+version: '2.2.7'
+main: org.example.esystemgui.ESystemGUI
+api-version: '1.21'
+description: 附魔强化系统 - 强化书与自定义GUI强化面板
+
+# CraftEngine 为软依赖：装了会先于本插件加载（强化书可用 ce-item 自定义材质），
+# 没装也不影响启动；配置了 ce-item 的书在 CE 缺失时自动降级为普通材质
+softdepend: [CraftEngine]
+
+# 经典 Bukkit 指令：补全走 TabExecutor 的纯文本前缀过滤，
+# 客户端不会像 Brigadier 那样对参数做按类型着色
+commands:
+  CyEnchantEnhancement:
+    description: 强化系统主指令
+    usage: /CyEnchantEnhancement <open|reload|book|stone|enchant>
+    aliases: [cee]

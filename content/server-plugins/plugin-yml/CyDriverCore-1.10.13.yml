@@ -1,0 +1,81 @@
+name: CyDriverCore
+version: '1.10.12'
+main: com.cy.drivercore.CyDriverCore
+api-version: '1.21'
+authors: [chenyu]
+description: 技能驱动核心 - 独立的技能引擎（区域破坏/附着魔掉落/领地保护/一模型多技能）
+website: ''
+softdepend:
+  - CraftEngine
+  - PlaceholderAPI
+  - WorldGuard
+  - Residence
+  - MythicMobs
+  - Vault
+commands:
+  cdc:
+    description: CyDriverCore 主指令
+    aliases: [cydriver]
+    # ★ 这行是给玩家看的用法提示 ✗ —— 要跟实际子命令保持一致 ✓
+    #   完整列表敲 /cdc 或 /cdc help 看（那里是最新的 ✓）
+    usage: /cdc <reload|stats|doctor|skills|item|show|give|list|probe|handlers|placeholder|debug|version>
+permissions:
+  cdc.admin:
+    description: 全部管理权限
+    default: op
+    children:
+      cdc.admin.reload: true
+      cdc.admin.stats: true
+      cdc.admin.doctor: true
+      cdc.admin.test: true
+      cdc.admin.debug: true
+      cdc.admin.show: true
+  cdc.admin.reload:
+    description: 重载配置
+    default: op
+  cdc.admin.stats:
+    description: 查看运行统计
+    default: op
+  cdc.admin.doctor:
+    description: 运行自检
+    default: op
+  cdc.admin.test:
+    description: 手动触发技能
+    default: op
+  cdc.admin.debug:
+    description: 调试模式开关
+    default: op
+  cdc.admin.show:
+    description: 打开展示界面（列出 items 里的全部武器，只读）
+    default: op
+  # ★ 技能权限：怎么用（这里【不声明】具体节点 ✗）──
+  #
+  #  技能是运行时从 skills/*.yml 动态加载的 ✓，
+  #  所以具体节点不可能写死在这里 ✓。
+  #
+  #  ★ 未声明的权限 Bukkit 也会正常工作 ✓：
+  #      · OP 玩家  -> 默认拥有
+  #      · 普通玩家 -> 默认没有（用 LuckPerms 单独授予即可）
+  #    所以「不声明」不等于「不能用」✓。
+  #
+  #  ★ 两道实际生效的关卡 ✗：
+  #
+  #  ① 技能级 —— 在技能的 yml 里写条件 ✓
+  #       Conditions:
+  #           - permission{c=cdc.use.技能名}
+  #
+  #  ② 物品级 —— 在 items/*.yml 的条目里写 ✓
+  #       permission: cdc.use.技能名
+  #       （这道更早：没权限时连冷却都不会扣 ✓）
+  #
+  #  ⚠️ 曾经这里声明过一个裸的 cdc.use 节点，注释说"通配"⚠️ ——
+  #     那是错的：Bukkit 不会因为声明了父节点就把 cdc.use.xxx 默认给所有人 ⚠️，
+  #     而代码里也从来没检查过 cdc.use 本身 ✓。
+  #     已删除，避免误导 ✓。
+
+  cdc.bypass.world:
+    description: 绕过世界限制
+    default: op
+  cdc.bypass.cooldown:
+    description: 绕过冷却（技能不检查也不写入冷却）
+    default: op

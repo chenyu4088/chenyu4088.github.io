@@ -1,0 +1,71 @@
+name: CyTop
+version: '1.2.2'
+main: org.cytop.CyTopPlugin
+api-version: '1.21'
+author: chenyu
+description: 简单高效的全息排行榜插件
+
+# 软依赖：按需挂钩，缺失时对应类型自动禁用
+softdepend:
+  - Vault
+  - PlayerPoints
+  - mcMMO
+  - PlaceholderAPI
+  - PeachHP
+
+commands:
+  cytop:
+    description: CyTop 主命令
+    aliases: [ct]
+    usage: "输入 /ct help 查看帮助"
+
+permissions:
+  cytop.admin:
+    description: CyTop 全部权限（包含以下全部子权限）
+    default: op
+    children:
+      cytop.command.help: true
+      cytop.command.list: true
+      cytop.command.info: true
+      cytop.command.create: true
+      cytop.command.remove: true
+      cytop.command.move: true
+      cytop.command.toggle: true
+      cytop.command.setpapi: true
+      cytop.command.refresh: true
+      cytop.command.reload: true
+      cytop.command.reward: true
+
+  cytop.command.help:
+    description: 使用 /ct help 查看帮助
+    default: op
+  cytop.command.list:
+    description: 使用 /ct list 查看排行榜列表
+    default: op
+  cytop.command.info:
+    description: 使用 /ct info 查看排行榜详情
+    default: op
+  cytop.command.create:
+    description: 使用 /ct create 创建排行榜
+    default: op
+  cytop.command.remove:
+    description: 使用 /ct del 删除排行榜位置
+    default: op
+  cytop.command.move:
+    description: 使用 /ct move 移动排行榜
+    default: op
+  cytop.command.toggle:
+    description: 使用 /ct toggle、/ct on、/ct off 控制排行榜显示
+    default: op
+  cytop.command.setpapi:
+    description: 使用 /ct setpapi 设置 PAPI 变量
+    default: op
+  cytop.command.refresh:
+    description: 使用 /ct refresh 刷新排行数据
+    default: op
+  cytop.command.reload:
+    description: 使用 /ct reload 重载配置
+    default: op
+  cytop.command.reward:
+    description: 使用 /ct reward 手动发放排行奖励
+    default: op

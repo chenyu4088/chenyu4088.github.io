@@ -1,0 +1,17 @@
+name: mcBuildTools
+version: 1.0
+main: com.liuxingyu.buildtools.core.BuildToolsPlugin
+api-version: 1.21
+author: liuxingyu2001
+description: 独立建筑工具插件 - 自动搭路/区域清除/区域填充/一键替换
+softdepend: [Vault, SoulRingX, SoulSpace]
+load: POSTWORLD
+commands:
+  mcbt:
+    description: mcBuildTools 管理命令
+    usage: /mcbt give <工具名> [玩家] | /mcbt list | /mcbt reload
+    aliases: [buildtools, mcbtools]
+permissions:
+  mcbtools.admin:
+    description: mcBuildTools 管理权限（发放工具/重载配置）
+    default: op

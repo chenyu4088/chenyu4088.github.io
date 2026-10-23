@@ -1,0 +1,81 @@
+name: PlayerWarp
+main: cn.handyplus.warp.PlayerWarp
+version: 2.4.4-free
+author: handy
+api-version: 1.13
+website: https://ricedoc.handyplus.cn/wiki/PlayerWarp/log
+softdepend: [ PlaceholderAPI, Vault, PlayerPoints, Multiverse-Core, PlayerCurrency, CMI, LEconomy, AuthMe, CatSeedLogin, OauthLogin ]
+description: 一个有点好用的玩家地标插件
+folia-supported: true
+commands:
+  playerWarp:
+    description: 玩家地标插件
+    aliases: [ plw ]
+permissions:
+  playerWarp.*:
+    description: 玩家地标插件
+    children:
+      playerWarp.amdin: true
+      playerWarp.reload: true
+      playerWarp.open: true
+      playerWarp.clear: true
+      playerWarp.getIp: true
+      playerWarp.setLogo: true
+      playerWarp.me: true
+      playerWarp.collection: true
+      playerWarp.tp: true
+      playerWarp.view: true
+      playerWarp.convert: true
+      playerWarp.create: true
+      playerWarp.tpId: true
+      playerWarp.createGui: true
+      playerWarp.whiteList: true
+      playerWarp.edit: true
+  playerWarp.admin:
+    description: 管理传送玩家
+    default: op
+  playerWarp.reload:
+    description: 重新加载配置
+    default: op
+  playerWarp.open:
+    description: 打开
+    default: true
+  playerWarp.clear:
+    description: 清理
+    default: op
+  playerWarp.getIp:
+    description: 获取地址
+    default: op
+  playerWarp.setLogo:
+    description: 设置logo
+    default: true
+  playerWarp.me:
+    description: 打开我的地标
+    default: true
+  playerWarp.collection:
+    description: 打开收藏地标
+    default: true
+  playerWarp.tp:
+    description: 根据名称直接传送到某地标
+    default: op
+  playerWarp.view:
+    description: 管理地标
+    default: op
+  playerWarp.convert:
+    description: 转化数据库
+    default: op
+  playerWarp.create:
+    description: 创建地标
+    default: op
+  playerWarp.tpId:
+    description: 根据ID直接传送到某地标
+    default: true
+  playerWarp.createGui:
+    description: 打开创建gui
+    default: op
+  playerWarp.whiteList:
+    description: 白名单设置
+    default: op
+  playerWarp.edit:
+    description: 编辑地标
+    default: op

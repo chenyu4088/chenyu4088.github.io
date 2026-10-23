@@ -1,0 +1,14 @@
+name: AntiCloneTool
+version: '1.4.7'
+main: ru.flestiz.anticlonetool.AntiCloneTool
+api-version: '1.21'
+authors: [ Flestiz ]
+folia-supported: true
+libraries:
+  - org.jetbrains.kotlin:kotlin-stdlib:2.1.10
+  - org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1
+commands:
+  anticlonetool:
+    description: "Default command"
+    usage: "/anticlonetool <arg>"
+    aliases: [act]

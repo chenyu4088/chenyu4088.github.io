@@ -1,0 +1,373 @@
+api-version: "1.20"
+name: CraftEngine
+version: 26.7.4
+main: net.momirealms.craftengine.bukkit.plugin.PaperCraftEnginePlugin
+bootstrapper: net.momirealms.craftengine.bukkit.plugin.PaperCraftEngineBootstrap
+load: STARTUP
+authors:
+  - XiaoMoMi
+contributors:
+  - https://github.com/Xiao-MoMi/craft-engine/graphs/contributors
+folia-supported: true
+dependencies:
+  server:
+    ASPaperPlugin:
+      load: OMIT
+      required: false
+      join-classpath: true
+    AdvancedItems:
+      load: OMIT
+      required: false
+      join-classpath: true
+    AuraSkills:
+      load: OMIT
+      required: false
+      join-classpath: true
+    AureliumSkills:
+      load: OMIT
+      required: false
+      join-classpath: true
+    AxiomPaper:
+      load: OMIT
+      required: false
+      join-classpath: true
+    AzureFlow:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Baikiruto:
+      load: OMIT
+      required: false
+      join-classpath: true
+    BentoBox:
+      load: OMIT
+      required: false
+      join-classpath: true
+    BetterModel:
+      load: OMIT
+      required: false
+      join-classpath: true
+    CrashClaim:
+      load: OMIT
+      required: false
+      join-classpath: true
+    CrazyVouchers:
+      load: OMIT
+      required: false
+      join-classpath: true
+    CustomCrafting:
+      load: OMIT
+      required: false
+      join-classpath: true
+    CustomFishing:
+      load: OMIT
+      required: false
+      join-classpath: true
+    CustomNameplates:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Dominion:
+      load: OMIT
+      required: false
+      join-classpath: true
+    DragonArmourers:
+      load: OMIT
+      required: false
+      join-classpath: true
+    EcoArmor:
+      load: OMIT
+      required: false
+      join-classpath: true
+    EcoCrates:
+      load: OMIT
+      required: false
+      join-classpath: true
+    EcoItems:
+      load: OMIT
+      required: false
+      join-classpath: true
+    EcoJobs:
+      load: OMIT
+      required: false
+      join-classpath: true
+    EcoMobs:
+      load: OMIT
+      required: false
+      join-classpath: true
+    EcoPets:
+      load: OMIT
+      required: false
+      join-classpath: true
+    EcoScrolls:
+      load: OMIT
+      required: false
+      join-classpath: true
+    EcoSkills:
+      load: OMIT
+      required: false
+      join-classpath: true
+    EmakiItem:
+      load: OMIT
+      required: false
+      join-classpath: true
+    ExecutableBlocks:
+      load: OMIT
+      required: false
+      join-classpath: true
+    ExecutableItems:
+      load: OMIT
+      required: false
+      join-classpath: true
+    FabledSkyBlock:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Factions:
+      load: OMIT
+      required: false
+      join-classpath: true
+    FastAsyncWorldEdit:
+      load: BEFORE
+      required: false
+      join-classpath: false
+    Geyser-Spigot:
+      load: OMIT
+      required: false
+      join-classpath: true
+    GriefDefender:
+      load: OMIT
+      required: false
+      join-classpath: true
+    GriefPrevention:
+      load: OMIT
+      required: false
+      join-classpath: true
+    GrimAC:
+      load: OMIT
+      required: false
+      join-classpath: true
+    HMCCosmetics:
+      load: OMIT
+      required: false
+      join-classpath: true
+    HeadDatabase:
+      load: OMIT
+      required: false
+      join-classpath: true
+    HuskClaims:
+      load: OMIT
+      required: false
+      join-classpath: true
+    HuskTowns:
+      load: OMIT
+      required: false
+      join-classpath: true
+    IridiumSkyblock:
+      load: OMIT
+      required: false
+      join-classpath: true
+    ItemEdit:
+      load: OMIT
+      required: false
+      join-classpath: true
+    ItemsAdder:
+      load: OMIT
+      required: false
+      join-classpath: true
+    ItemsXL:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Jobs:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Kingdoms:
+      load: OMIT
+      required: false
+      join-classpath: true
+    LandClaimPlugin:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Landlord:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Lands:
+      load: OMIT
+      required: false
+      join-classpath: true
+    LuckPerms:
+      load: OMIT
+      required: false
+      join-classpath: true
+    MMOCore:
+      load: OMIT
+      required: false
+      join-classpath: true
+    MMOItems:
+      load: OMIT
+      required: false
+      join-classpath: true
+    MagicGem:
+      load: OMIT
+      required: false
+      join-classpath: true
+    ModelEngine:
+      load: OMIT
+      required: false
+      join-classpath: true
+    MythicMobs:
+      load: OMIT
+      required: false
+      join-classpath: true
+    NeigeItems:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Nexo:
+      load: OMIT
+      required: false
+      join-classpath: true
+    NoBuildPlus:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Nova:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Oraxen:
+      load: OMIT
+      required: false
+      join-classpath: true
+    PlaceholderAPI:
+      load: OMIT
+      required: false
+      join-classpath: true
+    PlotSquared:
+      load: OMIT
+      required: false
+      join-classpath: true
+    PreciousStones:
+      load: OMIT
+      required: false
+      join-classpath: true
+    PxRpg:
+      load: OMIT
+      required: false
+      join-classpath: true
+    QuickShop-Hikari:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Ratziel:
+      load: OMIT
+      required: false
+      join-classpath: true
+    RedProtect:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Reforges:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Residence:
+      load: OMIT
+      required: false
+      join-classpath: true
+    SX-Item:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Sertraline:
+      load: OMIT
+      required: false
+      join-classpath: true
+    SimpleClaimSystem:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Skript:
+      load: OMIT
+      required: false
+      join-classpath: true
+    SlimeWorldManager:
+      load: OMIT
+      required: false
+      join-classpath: true
+    SlimeWorldPlugin:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Slimefun:
+      load: OMIT
+      required: false
+      join-classpath: true
+    StatTrackers:
+      load: OMIT
+      required: false
+      join-classpath: true
+    SuperiorSkyblock2:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Talismans:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Towny:
+      load: OMIT
+      required: false
+      join-classpath: true
+    UltimateClaims:
+      load: OMIT
+      required: false
+      join-classpath: true
+    UltimateClans:
+      load: OMIT
+      required: false
+      join-classpath: true
+    ViaVersion:
+      load: OMIT
+      required: false
+      join-classpath: true
+    WorldEdit:
+      load: BEFORE
+      required: false
+      join-classpath: true
+    WorldGuard:
+      load: OMIT
+      required: false
+      join-classpath: true
+    XClaim:
+      load: OMIT
+      required: false
+      join-classpath: true
+    Zaphkiel:
+      load: OMIT
+      required: false
+      join-classpath: true
+    floodgate:
+      load: OMIT
+      required: false
+      join-classpath: true
+    hClaims:
+      load: OMIT
+      required: false
+      join-classpath: true
+    mcMMO:
+      load: OMIT
+      required: false
+      join-classpath: true
+    packetevents:
+      load: OMIT
+      required: false
+      join-classpath: true
+    uSkyBlock:
+      load: OMIT
+      required: false
+      join-classpath: true

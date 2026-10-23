@@ -1,0 +1,30 @@
+name: McMmoView
+main: cn.handyplus.mcmmo.McMmoView
+version: 2.0.3
+author: handy
+website: https://ricedoc.handyplus.cn/wiki/McMmoView/log
+api-version: 1.13
+depend: [ mcMMO ]
+softdepend: [ PlaceholderAPI, AuthMe, CatSeedLogin, OauthLogin ]
+description: mcMMO可视化gui
+folia-supported: true
+commands:
+  mcMmoView:
+    description: mcMMO可视化gui
+    aliases: [ mmv ]
+permissions:
+  mcMmoView.*:
+    description: mcMMO可视化gui
+    children:
+      mcMmoView.reload: true
+      mcMmoView.open: true
+      mcMmoView.admin.open: true
+  mcMmoView.reload:
+    description: 重新加载配置
+    default: op
+  mcMmoView.open:
+    description: 打开GUI
+    default: true
+  mcMmoView.admin.open:
+    description: 管理打开GUI
+    default: op

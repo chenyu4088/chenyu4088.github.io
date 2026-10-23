@@ -1,0 +1,22 @@
+---
+interface Props {
+  value: string;
+  label?: string;
+}
+
+const { value, label = '复制' } = Astro.props;
+---
+
+<button
+  class="copy-button"
+  type="button"
+  data-copy={value}
+  data-copy-label={label}
+  aria-label={`复制 ${value}`}
+>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="9" y="9" width="11" height="11" rx="2" />
+    <path d="M5 15V5a2 2 0 0 1 2-2h10" />
+  </svg>
+  <span data-copy-text aria-live="polite">{label}</span>
+</button>

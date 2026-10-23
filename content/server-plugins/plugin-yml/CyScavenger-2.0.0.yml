@@ -1,0 +1,6 @@
+name: CyScavenger
+version: '2.0.0'
+main: com.chenyu.scavenger.CyScavenger
+api-version: '1.21'
+author: chenyu
+description: 清理村民违规附魔交易，修复 ExcellentEnchants 存量村民遗留问题。

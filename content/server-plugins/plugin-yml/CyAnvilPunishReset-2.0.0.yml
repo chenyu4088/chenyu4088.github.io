@@ -1,0 +1,7 @@
+name: CyAnvilPunishReset
+version: '2.0.0'
+main: com.cyanvilpunishreset.CyAnvilPunishReset
+api-version: '1.21'
+description: 铁砧惩罚重置插件
+author: chenyu
+softdepend: [Vault]

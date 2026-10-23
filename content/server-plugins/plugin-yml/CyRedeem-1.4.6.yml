@@ -1,0 +1,25 @@
+name: CyRedeem
+version: '1.4.6'
+main: com.cy.redeem.CyRedeem
+api-version: '1.21'
+author: Chenyu
+description: 兑换菜单 —— 材料换物品，支持分页 / 管理后台配置
+website: https://mc33.top
+
+# ★ SQLite 驱动交给 Paper 在启动时自动拉取，不打进 jar
+libraries:
+  - org.xerial:sqlite-jdbc:3.43.2.1
+
+commands:
+  cr:
+    description: CyRedeem 主指令
+    usage: /cr <create|open|reload|delete|list>
+    aliases: [cyredeem, redeem]
+
+permissions:
+  cyredeem.use:
+    description: 打开兑换菜单
+    default: true
+  cyredeem.admin:
+    description: 管理兑换项（创建/编辑/删除）
+    default: op

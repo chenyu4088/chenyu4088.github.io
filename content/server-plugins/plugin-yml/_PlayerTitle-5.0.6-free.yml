@@ -1,0 +1,81 @@
+name: PlayerTitle
+main: cn.handyplus.title.PlayerTitle
+version: 5.0.6-free
+author: handy
+website: https://ricedoc.handyplus.cn/wiki/PlayerTitle/log/
+api-version: 1.13
+softdepend: [ PlaceholderAPI, Vault, PlayerPoints, AttributePlus, SX-Attribute, SuperTrailsPro, SuperTrails, MythicLib, MMOItems, PlayerParticles, AttributeSystem, CMI, PlayerCurrency, SagaLoreStats, LEconomy, AuthMe, CatSeedLogin, OauthLogin, PlayerScoreboard ]
+folia-supported: true
+description: 一个有点好用的称号插件
+commands:
+  playerTitle:
+    description: 玩家称号
+    aliases: [ plt ]
+permissions:
+  playerTitle.*:
+    description: 玩家称号
+    children:
+      playerTitle.reward: true
+      playerTitle.buff: true
+      playerTitle.buff.ignoreWorld: true
+      playerTitle.card: true
+      playerTitle.coin: true
+      playerTitle.convert: true
+      playerTitle.getIp: true
+      playerTitle.particle: true
+      playerTitle.player: true
+      playerTitle.reload: true
+      playerTitle.title: true
+      playerTitle.view: true
+      playerTitle.open: true
+      playerTitle.shop: true
+      playerTitle.clear: true
+      playerTitle.shop.custom: true
+  playerTitle.reward:
+    description: 称号数量奖励
+    default: op
+  playerTitle.buff:
+    description: 称号buff相关
+    default: op
+  playerTitle.buff.ignoreWorld:
+    description: 忽略世界禁用属性限制
+    default: op
+  playerTitle.card:
+    description: 称号卡相关
+    default: op
+  playerTitle.coin:
+    description: 称号币相关
+    default: op
+  playerTitle.convert:
+    description: 转化数据库
+    default: op
+  playerTitle.getIp:
+    description: 获取服务信息
+    default: op
+  playerTitle.particle:
+    description: 称号粒子相关
+    default: op
+  playerTitle.player:
+    description: 玩家称号相关
+    default: op
+  playerTitle.reload:
+    description: 重载插件
+    default: op
+  playerTitle.title:
+    description: 称号相关
+    default: op
+  playerTitle.view:
+    description: 查看管理
+    default: op
+  playerTitle.open:
+    description: 称号仓库
+    default: true
+  playerTitle.shop:
+    description: 称号商城
+    default: true
+  playerTitle.clear:
+    description: 清理数据
+    default: op
+  playerTitle.shop.custom:
+    description: 自定义称号
+    default: true

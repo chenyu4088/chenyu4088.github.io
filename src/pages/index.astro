@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+import CopyButton from '../components/CopyButton.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Minecraft Java 版 · {site.version}
+        </p>
+
+        <h1>
+          <span class="title-mark">{site.mark}</span>生存
+        </h1>
+
+        <p class="hero-tagline">{site.tagline}</p>
+
+        <p class="hero-lead">
+          一个以生存为核心的 Minecraft 服务器。没有花哨的展示，只有可以长期玩下去的世界。
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#join">
+            加入服务器
+            <Icon name="arrow" size={18} />
+          </a>
+          <a class="button button-ghost" href="/guide">
+            游玩指南
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <StatusBadge />
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span>原版客户端可进</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span>无额外要求</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="floating-block block-a" aria-hidden="true"></div>
+        <div class="floating-block block-b" aria-hidden="true"></div>
+        <div class="floating-block block-c" aria-hidden="true"></div>
+
+        <div class="server-card">
+          <div class="server-card-top">
+            <span class="window-dots"><i></i><i></i><i></i></span>
+            <span class="mono">mc33.top</span>
+          </div>
+
+          <div class="server-card-body">
+            <div class="server-label">SERVER ADDRESS</div>
+
+            <div class="server-ip-row">
+              <code>mc33.top</code>
+              <CopyButton value="mc33.top" label="复制" />
+            </div>
+
+            <div class="server-stats">
+              <div>
+                <span>版本</span>
+                <strong>{site.version}</strong>
+              </div>
+              <div>
+                <span>类型</span>
+                <strong>生存</strong>
+              </div>
+              <div>
+                <span>客户端</span>
+                <strong>原版</strong>
+              </div>
+            </div>
+
+            <div class="server-status-row">
+              <StatusBadge />
+              <span class="mono">java edition</span>
+            </div>
+          </div>
+
+          <div class="server-card-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>01 / WHY 33</p>
+        <h2>把生存，玩成长期。</h2>
+        <p>
+          33生存是一个以长期生存为核心的 Minecraft 服务器。原版客户端就能进，世界会随着玩家一起生长。
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        {site.features.map((feature, index) => (
+          <article class="feature-card">
+            <div class="feature-icon"><Icon name={feature.icon} size={22} /></div>
+            <h3>{feature.title}</h3>
+            <p>{feature.desc}</p>
+            <span class="feature-index">0{index + 1}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-join" id="join">
+    <div class="container">
+      <div class="join-panel">
+        <div class="join-head">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>02 / JOIN</p>
+          <h2>三步进服</h2>
+          <p>Java 版 {site.version}，无额外要求。</p>
+        </div>
+
+        <div class="join-ip">
+          <span>服务器地址</span>
+          <code>mc33.top</code>
+          <CopyButton value="mc33.top" label="复制地址" />
+        </div>
+
+        <ol class="steps">
+          <li>
+            <span class="step-num">01</span>
+            <h3>启动游戏</h3>
+            <p>Minecraft Java 版 {site.version}。</p>
+          </li>
+          <li>
+            <span class="step-num">02</span>
+            <h3>添加服务器</h3>
+            <p>地址填写 mc33.top。</p>
+          </li>
+          <li>
+            <span class="step-num">03</span>
+            <h3>进入世界</h3>
+            <p>原版客户端，无额外要求。</p>
+          </li>
+        </ol>
+
+        <div class="join-actions">
+          <a class="button button-ghost" href="/guide">
+            查看完整游玩指南
+            <Icon name="arrow" size={18} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="community">
+    <div class="container">
+      <div class="community-panel">
+        <div class="community-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>03 / COMMUNITY</p>
+          <h2>加入玩家群</h2>
+          <p>开服通知、启动器文件和问题反馈都在 QQ 群。群文件里会放最新启动器。</p>
+        </div>
+
+        <div class="community-card">
+          <span class="community-label">QQ 群</span>
+          <a class="community-qq" href={site.qqGroupLink} target="_blank" rel="noreferrer">
+            {site.qqGroup}
+          </a>
+          <div class="community-actions">
+            <a class="button button-primary button-small" href={site.qqGroupLink} target="_blank" rel="noreferrer">
+              加入 QQ 群
+              <Icon name="arrow" size={16} />
+            </a>
+            <CopyButton value={site.qqGroup} label="复制群号" />
+          </div>
+          <a class="button button-ghost" href="/download">
+            下载启动器
+            <Icon name="arrow" size={18} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container faq-grid">
+      <div class="section-head">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>04 / FAQ</p>
+        <h2>进服之前</h2>
+        <p>关于版本、地址和客户端，先看这里。</p>
+      </div>
+
+      <div class="faq-list">
+        {site.faqs.map((faq) => (
+          <details class="faq-item">
+            <summary>
+              {faq.q}
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <p>{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

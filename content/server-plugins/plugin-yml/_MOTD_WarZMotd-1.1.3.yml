@@ -1,0 +1,55 @@
+name: WarZMotd
+version: 1.1.3
+main: com.crazyjky.warzmotd.WarZMotdPlugin
+folia-supported: true
+author: Crazy_Jky
+description: 动态 MOTD 和服务器图标管理插件
+website: https://github.com/CrazyJky/WarZMotd
+
+commands:
+  motd:
+    description: WarZMotd 主命令
+    usage: /motd [reload|list|set|maintenance|help]
+    permission: warzmotd.use
+    aliases: [zmotd, wzmotd]
+
+permissions:
+  warzmotd.*:
+    description: 所有 WarZMotd 权限
+    children:
+      warzmotd.admin: true
+      warzmotd.reload: true
+      warzmotd.view: true
+      warzmotd.use: true
+  
+  warzmotd.admin:
+    description: 管理员权限
+    default: op
+    children:
+      warzmotd.reload: true
+      warzmotd.maintenance: true
+      warzmotd.set: true
+  
+  warzmotd.reload:
+    description: 重载配置权限
+    default: op
+  
+  warzmotd.view:
+    description: 查看信息权限
+    default: true
+  
+  warzmotd.use:
+    description: 使用基础命令权限
+    default: true
+  
+  warzmotd.maintenance:
+    description: 维护模式管理权限
+    default: op
+
+  warzmotd.maintenance.bypass:
+    description: 维护模式绕过权限
+    default: op
+  
+  warzmotd.set:
+    description: 设置 MOTD 权限
+    default: op

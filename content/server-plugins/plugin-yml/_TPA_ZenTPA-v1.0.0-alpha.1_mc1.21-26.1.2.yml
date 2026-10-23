@@ -1,0 +1,23 @@
+name: ZenTPA
+version: v1.0.0-alpha.1+mc1.21-26.1.2
+main: me.maybeizen.ZenTPA.ZenTPA
+api-version: "1.21"
+description: A simple, interactive teleport-request (TPA) plugin for Paper servers
+authors: ["maybeizen"]
+website: https://maybeizen.space
+depend: []
+softdepend: ["Vault", "PlaceholderAPI"]
+
+permissions:
+    zentpa.use:
+        description: Allows using /tpa, /tpahere, /tpaccept, /tpdeny, /tptoggle, /tpcancel, /tplist
+        default: true
+    zentpa.admin:
+        description: Allows using /zentpa reload
+        default: op
+    zentpa.bypass.cooldown:
+        description: Bypass the TPA request cooldown
+        default: op
+    zentpa.bypass.cost:
+        description: Bypass TPA costs (hunger, XP, money) unless require-costs is true
+        default: op

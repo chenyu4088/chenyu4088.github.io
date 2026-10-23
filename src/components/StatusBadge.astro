@@ -1,0 +1,51 @@
+---
+import { site } from '../data/site';
+---
+
+<div class="status-badge" data-server-status data-server-host={site.ip}>
+  <span class="status-dot"></span>
+  <span data-status-text>检测中…</span>
+</div>
+
+<script is:inline>
+  (() => {
+    const nodes = Array.from(document.querySelectorAll('[data-server-status]'));
+    if (!nodes.length) return;
+
+    const host = nodes[0].getAttribute('data-server-host') || 'mc33.top';
+
+    const render = (state, text) => {
+      nodes.forEach((node) => {
+        const textEl = node.querySelector('[data-status-text]');
+        const dot = node.querySelector('.status-dot');
+        if (textEl) textEl.textContent = text;
+        if (dot) {
+          dot.classList.remove('is-online', 'is-offline', 'is-unknown');
+          if (state) dot.classList.add(state);
+        }
+      });
+    };
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 6000);
+
+    fetch(`https://api.mcstatus.io/v2/status/java/${encodeURIComponent(host)}`, {
+      signal: controller.signal,
+    })
+      .then((response) => (response.ok ? response.json() : Promise.reject(new Error('status'))))
+      .then((data) => {
+        clearTimeout(timeout);
+        if (data.online) {
+          const online = data.players?.online ?? 0;
+          const max = data.players?.max ?? 0;
+          render('is-online', `在线 · ${online}${max ? ` / ${max}` : ''} 人`);
+        } else {
+          render('is-offline', '当前离线');
+        }
+      })
+      .catch(() => {
+        clearTimeout(timeout);
+        render('is-unknown', '状态未知');
+      });
+  })();
+</script>

@@ -1,0 +1,21 @@
+name: CyExppond
+version: '4.0.0'
+main: chenyu.cyexppond.CyExppond
+api-version: '1.21'
+description: 经验挂机池插件
+authors: [Chenyu]
+softdepend: [Vault, PlayerPoints, PlaceholderAPI]
+
+commands:
+  cyexppond:
+    description: CyExppond 管理命令
+    usage: /cyexppond help
+    aliases: [cep]
+
+permissions:
+  cyexppond.admin:
+    description: CyExppond 管理权限
+    default: op
+  cyexppond.bypass:
+    description: 绕过池子传送限制与权限进入
+    default: op

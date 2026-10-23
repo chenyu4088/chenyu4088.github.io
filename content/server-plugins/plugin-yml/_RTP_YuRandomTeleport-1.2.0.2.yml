@@ -1,0 +1,37 @@
+name: YuRandomTeleport
+description: 跨版本随机传送插件
+version: 1.2.0.2
+main: org.yutay.yurtp.YuRandomTeleport
+authors: [ Vicuna ]
+website: https://vicuna-main.github.io/YuPluginHub/plugins/items/yu-random-teleport/
+
+commands:
+  yurtp:
+    description: 随机传送
+    usage: /yurtp [player] [world] 或 /yurtp reload|help
+    aliases: [rtp]
+
+permissions:
+  yurtp.use:
+    default: true
+  yurtp.bypass.cooldown:
+    default: op
+  yurtp.bypass.cost:
+    default: op
+  yurtp.bypass.wait:
+    description: 跳过传送等待时间
+    default: op
+  yurtp.teleport.others:
+    description: 允许传送其他玩家
+    default: op
+  yurtp.reload:
+    description: 允许重载插件配置
+    default: op
+  yurtp.bypass.cooldown.others:
+    description: 传送其他玩家时无视其冷却时间
+    default: op
+
+depend: []
+softdepend: [Vault, PlaceholderAPI]
+folia-supported: true
+api-version: 1.13

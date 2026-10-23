@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { plugins, featuredPlugins, type PluginLicense } from '../data/plugins';
+
+const licenseLabel = (license: PluginLicense) =>
+  license === '待定' ? '授权待定' : license;
+
+const licenseClass = (license: PluginLicense) =>
+  license === '免费' ? 'is-free' : license === '付费' ? 'is-paid' : 'is-pending';
+
+const docsHref = (plugin: { slug: string }) => `/docs/${plugin.slug}`;
+
+---
+
+<BaseLayout
+  title="获取插件 · 33生存"
+  description="33生存自研插件列表：副本、通行证、兑换、强化、灵魂绑定、超级熔炉、排行榜等，共 14 个插件。"
+>
+  <section class="section plugins-top">
+    <div class="container">
+      <div class="plugins-intro" data-reveal>
+        <p class="eyebrow"><span class="eyebrow-dot"></span>PLUGINS</p>
+        <p>
+          33生存自研插件，共 {plugins.length} 个。覆盖副本、通行证、兑换、强化、灵魂绑定、熔炉、蟠桃、挂机池和排行榜。
+        </p>
+      </div>
+
+      <div class="plugin-carousel" data-plugin-carousel data-autoplay="5500" aria-roledescription="carousel" aria-label="最新插件">
+        <div class="plugin-carousel-track" data-carousel-track>
+          {featuredPlugins.map((plugin, index) => (
+            <article
+              class="plugin-slide"
+              data-carousel-slide
+              data-doc-href={docsHref(plugin)}
+              role="link"
+              tabindex={index === 0 ? '0' : '-1'}
+              aria-label={`查看 ${plugin.name} 文档`}
+              aria-hidden={index === 0 ? 'false' : 'true'}
+            >
+              <div class="plugin-slide-top">
+                <div class="plugin-badge-row">
+                  <span class="plugin-category">{plugin.category}</span>
+                </div>
+                <span class={`plugin-license ${licenseClass(plugin.license)}`}>{licenseLabel(plugin.license)}</span>
+              </div>
+
+              <h2>{plugin.name}</h2>
+              <p class="plugin-tagline">{plugin.tagline}</p>
+              <p class="plugin-desc">{plugin.description}</p>
+
+              {plugin.highlights && plugin.highlights.length > 0 && (
+                <div class="plugin-highlights">
+                  {plugin.highlights.map((highlight) => (
+                    <span class="plugin-highlight">{highlight}</span>
+                  ))}
+                </div>
+              )}
+
+              <div class="plugin-slide-meta">
+                <div><span>插件版本</span><strong>v{plugin.version}</strong></div>
+                <div><span>支持核心</span><strong>{plugin.cores.join(' / ')}</strong></div>
+              </div>
+
+              <div class="plugin-actions">
+                <a class="button button-primary button-small" href={`/plugins/get/${plugin.slug}`}>
+                  获取插件
+                  <Icon name="arrow" size={16} />
+                </a>
+                <a class="button button-ghost button-small" href={docsHref(plugin)}>文档</a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="plugin-carousel-footer">
+          <div class="plugin-carousel-dots" role="tablist" aria-label="选择最新插件">
+            {featuredPlugins.map((plugin, index) => (
+              <button
+                class:list={['plugin-carousel-dot', { 'is-active': index === 0 }]}
+                type="button"
+                data-carousel-dot={index}
+                aria-label={`查看 ${plugin.name}`}
+                aria-selected={index === 0 ? 'true' : 'false'}
+              />
+            ))}
+          </div>
+          <div class="plugin-carousel-footer-right">
+            <span class="plugin-carousel-hint">自动轮播 · 悬停暂停</span>
+            <div class="plugin-carousel-controls">
+              <button class="icon-button plugin-carousel-arrow is-prev" type="button" data-carousel-prev aria-label="上一个插件">
+                <Icon name="arrow" size={18} />
+              </button>
+              <button class="icon-button plugin-carousel-arrow" type="button" data-carousel-next aria-label="下一个插件">
+                <Icon name="arrow" size={18} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section plugins-all">
+    <div class="container">
+      <div class="plugin-section-head">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-dot"></span>ALL PLUGINS</p>
+          <h2>全部插件</h2>
+        </div>
+        <span class="plugin-count">{plugins.length} 个</span>
+      </div>
+
+      <div class="plugin-grid">
+        {plugins.map((plugin) => (
+          <article
+            class="plugin-card"
+            data-reveal
+            data-doc-href={docsHref(plugin)}
+            role="link"
+            tabindex="0"
+            aria-label={`查看 ${plugin.name} 文档`}
+          >
+            <div class="plugin-card-head">
+              <div>
+                <div class="plugin-badge-row">
+                  <span class="plugin-category">{plugin.category}</span>
+                </div>
+                <h3>{plugin.name}</h3>
+              </div>
+              <span class={`plugin-license ${licenseClass(plugin.license)}`}>{licenseLabel(plugin.license)}</span>
+            </div>
+
+            <p class="plugin-card-tagline">{plugin.tagline}</p>
+            <p class="plugin-desc">{plugin.description}</p>
+
+            {plugin.highlights && plugin.highlights.length > 0 && (
+              <div class="plugin-highlights">
+                {plugin.highlights.map((highlight) => (
+                  <span class="plugin-highlight">{highlight}</span>
+                ))}
+              </div>
+            )}
+
+            <dl class="plugin-facts">
+              <div><dt>插件版本</dt><dd>v{plugin.version}</dd></div>
+              <div><dt>支持核心</dt><dd>{plugin.cores.join(' / ')}</dd></div>
+            </dl>
+
+            <div class="plugin-actions">
+              <a class="button button-primary button-small" href={`/plugins/get/${plugin.slug}`}>
+                获取
+                <Icon name="arrow" size={16} />
+              </a>
+              <a class="button button-ghost button-small" href={docsHref(plugin)}>文档</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const carousel = document.querySelector('[data-plugin-carousel]');
+      if (!carousel) return;
+
+      const track = carousel.querySelector('[data-carousel-track]');
+      const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+      const dots = Array.from(carousel.querySelectorAll('[data-carousel-dot]'));
+      const prev = carousel.querySelector('[data-carousel-prev]');
+      const next = carousel.querySelector('[data-carousel-next]');
+      if (!track || slides.length < 2) return;
+
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let current = 0;
+      let timer = null;
+
+      const render = (index) => {
+        current = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        slides.forEach((slide, i) => {
+          slide.setAttribute('aria-hidden', String(i !== current));
+          slide.setAttribute('tabindex', i === current ? '0' : '-1');
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('is-active', i === current);
+          dot.setAttribute('aria-selected', String(i === current));
+        });
+      };
+
+      const stop = () => {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+      };
+
+      const start = () => {
+        stop();
+        if (reduced) return;
+        timer = window.setInterval(() => render(current + 1), Number(carousel.dataset.autoplay) || 5500);
+      };
+
+      prev?.addEventListener('click', () => {
+        render(current - 1);
+        start();
+      });
+      next?.addEventListener('click', () => {
+        render(current + 1);
+        start();
+      });
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          render(Number(dot.dataset.carouselDot));
+          start();
+        });
+      });
+
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      carousel.addEventListener('focusin', stop);
+      carousel.addEventListener('focusout', start);
+
+      render(0);
+      start();
+    })();
+
+    // 整卡/整张轮播进入文档；卡片里的「获取」和「文档」按钮保持各自链接。
+    document.querySelectorAll('[data-doc-href]').forEach((element) => {
+      const open = () => {
+        const href = element.getAttribute('data-doc-href');
+        if (href) window.location.href = href;
+      };
+
+      element.addEventListener('click', (event) => {
+        if (event.target.closest('a, button')) return;
+        open();
+      });
+
+      element.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        if (event.target.closest('a, button')) return;
+        event.preventDefault();
+        open();
+      });
+    });
+  </script>
+</BaseLayout>

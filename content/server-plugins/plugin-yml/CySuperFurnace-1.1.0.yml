@@ -1,0 +1,19 @@
+name: CySuperFurnace
+version: '1.0.0'
+main: com.cysuperfurnace.CySuperFurnace
+api-version: '1.21'
+description: 超级熔炉插件
+author: chenyu
+softdepend: [Vault, PlayerPoints, CraftEngine, CyPass]
+commands:
+  cysuperfurnace:
+    description: CySuperFurnace 主指令
+    aliases: [csf]
+    usage: /cysuperfurnace help
+permissions:
+  cysuperfurnace.use:
+    description: 使用超级熔炉（蹲右开面板 + 升级）
+    default: op
+  cysuperfurnace.admin:
+    description: 管理超级熔炉（give / reload / set / upgrade / downgrade）
+    default: op

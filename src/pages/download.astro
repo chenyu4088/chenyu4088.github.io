@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import CopyButton from '../components/CopyButton.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="下载启动器 · 33生存"
+  description="33生存启动器下载：QQ 群文件、夸克网盘、百度网盘和直链四种获取方式。"
+>
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-copy" data-reveal>
+        <p class="eyebrow"><span class="eyebrow-dot"></span>DOWNLOAD</p>
+        <h1>下载启动器</h1>
+        <p>
+          四种获取方式：QQ 群文件、直链、百度网盘、夸克网盘。优先直链或群文件；网盘作为备用。
+        </p>
+
+        <div class="placeholder-actions">
+          <a class="button button-primary" href={site.qqGroupLink} target="_blank" rel="noreferrer">
+            加入 QQ 群
+            <Icon name="arrow" size={18} />
+          </a>
+          <a class="button button-ghost" href="/guide">先看游玩指南</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="module-grid">
+        <div class="module-card" data-reveal>
+          <div class="download-card-head">
+            <span class="download-index">01</span>
+            <h2>QQ 群文件</h2>
+            <span class="download-badge">推荐</span>
+          </div>
+          <div class="feature-icon"><Icon name="terminal" size={22} /></div>
+          <p>
+            进群后在群文件里下载启动器。国内速度最稳，更新包和公告也会一起放在群里。
+          </p>
+
+          <div class="download-qq">
+            <span>QQ 群</span>
+            <a href={site.qqGroupLink} target="_blank" rel="noreferrer"><code>{site.qqGroup}</code></a>
+            <CopyButton value={site.qqGroup} label="复制群号" />
+          </div>
+
+          <a class="button button-primary button-small" href={site.qqGroupLink} target="_blank" rel="noreferrer">
+            加入 QQ 群
+            <Icon name="arrow" size={16} />
+          </a>
+          <span class="module-link is-muted">点击按钮直接跳转 QQ 加群</span>
+        </div>
+
+        <div class="module-card" data-reveal>
+          <div class="download-card-head">
+            <span class="download-index">02</span>
+            <h2>直链下载</h2>
+          </div>
+          <div class="feature-icon"><Icon name="spark" size={22} /></div>
+          <p>
+            {site.downloads.direct
+              ? '浏览器直接下载，不用跳网盘。当前由阿里云杭州节点提供，支持断点续传。'
+              : '浏览器直接下载，不用跳网盘。直链还在准备中，开放后会放在这里。'}
+          </p>
+
+          {site.downloads.direct ? (
+            <a class="button button-primary button-small" href={site.downloads.direct} target="_blank" rel="noreferrer">
+              直接下载
+              <Icon name="arrow" size={16} />
+            </a>
+          ) : (
+            <span class="button button-ghost button-small is-disabled" aria-disabled="true">
+              暂未开放
+            </span>
+          )}
+          <span class="module-link is-muted">
+            {site.downloads.direct ? '如果浏览器提示不安全，可复制链接到新标签打开' : '直链下载可能受网络环境影响'}
+          </span>
+        </div>
+
+        <div class="module-card" data-reveal>
+          <div class="download-card-head">
+            <span class="download-index">03</span>
+            <h2>百度网盘</h2>
+          </div>
+          <div class="feature-icon"><Icon name="leaf" size={22} /></div>
+          <p>
+            百度网盘作为备用线路。没有会员时下载可能限速，能进群就用群文件。
+          </p>
+
+          {site.downloads.baidu ? (
+            <a class="button button-ghost button-small" href={site.downloads.baidu} target="_blank" rel="noreferrer">
+              打开百度网盘
+              <Icon name="arrow" size={16} />
+            </a>
+          ) : (
+            <span class="button button-ghost button-small is-disabled" aria-disabled="true">
+              链接待补
+            </span>
+          )}
+          <span class="module-link is-muted">链接失效时请在群里反馈</span>
+        </div>
+
+        <div class="module-card" data-reveal>
+          <div class="download-card-head">
+            <span class="download-index">04</span>
+            <h2>夸克网盘</h2>
+          </div>
+          <div class="feature-icon"><Icon name="cube" size={22} /></div>
+          <p>
+            群文件不方便时用夸克网盘。打开分享页，保存到自己的网盘后再下载。
+          </p>
+
+          {site.downloads.quark ? (
+            <a class="button button-ghost button-small" href={site.downloads.quark} target="_blank" rel="noreferrer">
+              打开夸克网盘
+              <Icon name="arrow" size={16} />
+            </a>
+          ) : (
+            <span class="button button-ghost button-small is-disabled" aria-disabled="true">
+              链接待补
+            </span>
+          )}
+          <span class="module-link is-muted">链接失效时请在群里反馈</span>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <strong>下载顺序建议：</strong>优先直链或 QQ 群文件；百度、夸克作为备用。
+      </div>
+
+      <div class="docs-note" data-reveal>
+        <Icon name="check" size={20} />
+        <span>下载后如果启动器打不开，先确认系统版本和解压是否完整；仍然不行就在群里反馈。</span>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

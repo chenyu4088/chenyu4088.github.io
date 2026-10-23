@@ -1,0 +1,57 @@
+---
+import { site } from '../data/site';
+import CopyButton from './CopyButton.astro';
+
+const year = new Date().getFullYear();
+const isPluginGet = Astro.url.pathname.startsWith('/plugins/get/');
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label={`${site.name} 首页`}>
+          <span class="brand-mark">{site.mark}</span>
+          <span class="brand-text">
+            {site.name}
+            <small>MINECRAFT SERVER</small>
+          </span>
+        </a>
+        <p>{site.tagline}</p>
+        <p class="footer-disclaimer">本站与 Mojang Studios 无关联。</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>导航</h4>
+        <a href="/">首页</a>
+        <a href="/guide">游玩指南</a>
+        <a href="/guide#commands-common">指令速查</a>
+        <a href="/download">下载启动器</a>
+        <a href="/plugins">获取插件</a>
+        <a href="/#join">加入服务器</a>
+      </div>
+
+      {isPluginGet ? (
+        <div class="footer-col">
+          <h4>获取插件</h4>
+          <a href="/plugins">全部插件</a>
+          <a href="/docs">插件文档</a>
+          <span class="footer-muted">插件获取请联系作者</span>
+        </div>
+      ) : (
+        <div class="footer-col">
+          <h4>社区</h4>
+          <a class="footer-muted" href={site.qqGroupLink} target="_blank" rel="noreferrer">加入 QQ 群</a>
+          <span class="footer-qq">{site.qqGroup}</span>
+          <CopyButton value={site.qqGroup} label="复制群号" />
+          <span class="footer-muted">点击上方链接可直接加群</span>
+        </div>
+      )}
+    </div>
+
+    <div class="footer-bottom">
+      <span>© {year} {site.name} · {site.domain}</span>
+      <span>Minecraft Java 版 {site.version}</span>
+    </div>
+  </div>
+</footer>

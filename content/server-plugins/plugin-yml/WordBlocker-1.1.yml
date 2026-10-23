@@ -1,0 +1,25 @@
+name: WordBlocker
+version: 1.1
+main: org.drizzi.wordBlocker.WordBlocker
+api-version: 1.21
+author: Drizzi
+
+permissions:
+  wordblocker.bypass:
+    description: Allows player to bypass word blocking
+    default: op
+  wordblocker.reload:
+    description: Allows player to reload the config
+    default: op
+  wordblocker.notify:
+    description: Receive notifications about blocked messages
+    default: op
+  wordblocker.commandblock.bypass:
+    description: Bypass blocked commands
+    default: op
+  wordblocker.caps.bypass:
+    description: Bypass caps blocker
+    default: op
+  wordblocker.cooldown.bypass:
+    description: Bypass chat cooldown
+    default: op

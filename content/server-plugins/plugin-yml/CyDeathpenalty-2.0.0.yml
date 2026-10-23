@@ -1,0 +1,7 @@
+name: CyDeathpenalty
+version: '2.0.0'
+main: com.cydeathpenalty.CyDeathpenalty
+api-version: '1.21'
+description: 死亡惩罚插件
+author: chenyu
+softdepend: [Vault, PeachHP]

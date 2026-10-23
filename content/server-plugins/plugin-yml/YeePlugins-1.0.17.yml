@@ -1,0 +1,14 @@
+
+
+#         Powered by TabooLib 6.2         #
+
+
+name: YeePlugins
+main: me.yeezhi.yeeplugins.taboolib.platform.BukkitPlugin
+version: 1.0.17
+authors:
+  - 'Yeezhi'
+depend:
+  - 'YeeCore'
+api-version: 1.13
+folia-supported: true

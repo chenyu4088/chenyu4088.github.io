@@ -1,0 +1,133 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+
+const path = Astro.url.pathname;
+const isHome = path === '/' || path === '';
+const isGuide = path.startsWith('/guide');
+const isDownload = path.startsWith('/download');
+const isPlugins = path.startsWith('/plugins') || path.startsWith('/docs');
+---
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label={`${site.name} 首页`}>
+      <span class="brand-mark">{site.mark}</span>
+      <span class="brand-text">
+        {site.name}
+        <small>MINECRAFT SERVER</small>
+      </span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" data-open="false" aria-label="主导航">
+      <a
+        href="/"
+        class:list={['nav-link', { 'is-active': isHome }]}
+        aria-current={isHome ? 'page' : undefined}
+      >
+        首页
+      </a>
+      <a
+        href="/guide"
+        class:list={['nav-link', { 'is-active': isGuide }]}
+        aria-current={isGuide ? 'page' : undefined}
+      >
+        游玩指南
+      </a>
+      <a
+        href="/download"
+        class:list={['nav-link', { 'is-active': isDownload }]}
+        aria-current={isDownload ? 'page' : undefined}
+      >
+        下载启动器
+      </a>
+      <a
+        href="/plugins"
+        class:list={['nav-link', { 'is-active': isPlugins }]}
+        aria-current={isPlugins ? 'page' : undefined}
+      >
+        获取插件
+      </a>
+
+      <button
+        class="theme-switch"
+        type="button"
+        role="switch"
+        aria-checked="true"
+        aria-label="切换深色模式"
+        data-theme-toggle
+      >
+        <span>深色</span>
+        <span class="switch-track" aria-hidden="true">
+          <span class="switch-knob"></span>
+        </span>
+      </button>
+
+      <a class="button button-primary button-small nav-join" href="/#join">
+        加入服务器
+      </a>
+    </nav>
+
+    <button
+      class="nav-toggle icon-button"
+      type="button"
+      data-nav-toggle
+      aria-label="打开菜单"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      <span class="nav-toggle-open"><Icon name="menu" size={20} /></span>
+      <span class="nav-toggle-close"><Icon name="close" size={20} /></span>
+    </button>
+  </div>
+</header>
+
+<script is:inline>
+  (() => {
+    const header = document.querySelector('[data-header]');
+    const toggle = document.querySelector('[data-nav-toggle]');
+    const nav = document.querySelector('#site-nav');
+    const themeButton = document.querySelector('[data-theme-toggle]');
+
+    const setNav = (open) => {
+      if (!header || !toggle || !nav) return;
+      header.classList.toggle('nav-open', open);
+      nav.dataset.open = String(open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? '关闭菜单' : '打开菜单');
+    };
+
+    toggle?.addEventListener('click', () => {
+      setNav(nav?.dataset.open !== 'true');
+    });
+
+    nav?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setNav(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setNav(false);
+    });
+
+    const applyTheme = (theme) => {
+      document.documentElement.dataset.theme = theme;
+      const isDark = theme === 'dark';
+      themeButton?.setAttribute('aria-checked', String(isDark));
+      themeButton?.setAttribute('aria-label', isDark ? '关闭深色模式' : '开启深色模式');
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', isDark ? '#06110d' : '#f4fbf7');
+    };
+
+    applyTheme(document.documentElement.dataset.theme || 'dark');
+
+    themeButton?.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try {
+        localStorage.setItem('mc33-theme', next);
+      } catch {
+        /* localStorage 不可用时只切换当前页面 */
+      }
+    });
+  })();
+</script>

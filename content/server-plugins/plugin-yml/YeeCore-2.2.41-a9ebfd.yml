@@ -1,0 +1,31 @@
+
+
+#         Powered by TabooLib 6.2         #
+
+
+name: YeeCore
+main: me.yeezhi.yeecore.taboolib.platform.BukkitPlugin
+version: 2.2.41
+website: https://www.goodmc.cn/
+authors:
+  - 'Yeezhi'
+softdepend:
+  - 'SX-Attribute'
+  - 'AttributePlus'
+  - 'ItemLoreOrigin'
+  - 'OriginAttribute'
+  - 'MMOItems'
+  - 'MythicMobs'
+  - 'ProtocolLib'
+  - 'PlayerPoints'
+  - 'Vault'
+  - 'GermPlugin'
+  - 'DragonCore'
+  - 'CloudPick'
+  - 'ArcartX'
+  - 'EasyCore'
+  - 'DungeonMaster'
+  - 'DungeonPlus'
+api-version: 1.13
+description: 椰の系列插件核心
+folia-supported: true

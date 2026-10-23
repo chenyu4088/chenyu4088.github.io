@@ -1,0 +1,17 @@
+name: CyPeachHP
+version: '2.2.1'
+main: com.pantao.peachhp.CyPeachHP
+api-version: '1.21'
+description: 食用蟠桃永久提升血量上限
+folia-supported: true
+
+# 软依赖: 装了就保证其先于本插件加载, 没装不影响启动
+# (CraftEngine 物品对接, PlaceholderAPI 占位符)
+softdepend:
+  - CraftEngine
+  - PlaceholderAPI
+
+permissions:
+  cypeachhp.admin:
+    description: 蟠桃管理权限
+    default: op

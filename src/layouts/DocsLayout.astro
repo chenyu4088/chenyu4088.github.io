@@ -1,0 +1,159 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+
+export interface DocSection {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  pluginName: string;
+  version: string;
+  license: string;
+  cores: string;
+  summary: string;
+  slug: string;
+  sections: DocSection[];
+}
+
+const { pluginName, version, license, cores, summary, slug, sections } = Astro.props;
+---
+
+<BaseLayout
+  title={`${pluginName} 文档 · 33生存`}
+  description={`${pluginName} 插件文档：安装、命令、权限、配置和常见问题。`}
+>
+  <div class="guide-shell docs-shell" data-docs-shell>
+    <aside class="guide-sidebar docs-sidebar">
+      <div class="guide-sidebar-inner">
+        <a class="guide-brand" href="/docs">
+          <span class="guide-brand-mark">33</span>
+          <span class="guide-brand-text">插件文档<small>{pluginName}</small></span>
+        </a>
+
+        <p class="guide-sidebar-title">目录</p>
+        <nav aria-label="文档目录">
+          {sections.map((section, index) => (
+            <a
+              href={`#${section.id}`}
+              class:list={[{ 'is-active': index === 0 }]}
+              data-docs-link
+            >
+              {section.label}
+            </a>
+          ))}
+        </nav>
+
+        <div class="guide-sidebar-group">
+          <span>当前版本</span>
+          <code>v{version}</code>
+          <small>{cores}</small>
+        </div>
+
+        <a class="guide-sidebar-cta" href="/plugins">
+          返回插件列表
+          <Icon name="arrow" size={16} />
+        </a>
+      </div>
+    </aside>
+
+    <div class="guide-backdrop" data-docs-backdrop></div>
+
+    <div class="guide-main docs-main">
+      <div class="guide-toolbar docs-toolbar">
+        <button
+          class="guide-menu-toggle icon-button"
+          type="button"
+          data-docs-menu
+          aria-label="打开目录"
+          aria-expanded="false"
+        >
+          <Icon name="menu" size={18} />
+        </button>
+
+        <div class="docs-breadcrumb">
+          <a href="/docs">文档</a>
+          <span>/</span>
+          <span>{pluginName}</span>
+        </div>
+
+        <a class="guide-toolbar-link" href={`/plugins/get/${slug}`}>获取插件</a>
+      </div>
+
+      <div class="guide-content docs-content">
+        <header class="docs-heading" data-reveal>
+          <p class="eyebrow"><span class="eyebrow-dot"></span>PLUGIN DOCS</p>
+          <h1>{pluginName}</h1>
+          <p>{summary}</p>
+
+          <div class="docs-meta">
+            <span class="plugin-license {license === '免费' ? 'is-free' : 'is-paid'}">{license}</span>
+            <span>v{version}</span>
+            <span>{cores}</span>
+            <span>文档初稿</span>
+          </div>
+        </header>
+
+        <slot />
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    (() => {
+      const shell = document.querySelector('[data-docs-shell]');
+      const menu = document.querySelector('[data-docs-menu]');
+      const sidebar = document.querySelector('.docs-sidebar');
+      const backdrop = document.querySelector('[data-docs-backdrop]');
+
+      const setSidebar = (open) => {
+        if (shell) shell.classList.toggle('sidebar-open', open);
+        if (menu) {
+          menu.setAttribute('aria-expanded', String(open));
+          menu.setAttribute('aria-label', open ? '关闭目录' : '打开目录');
+        }
+      };
+
+      menu?.addEventListener('click', () => setSidebar(!shell?.classList.contains('sidebar-open')));
+      backdrop?.addEventListener('click', () => setSidebar(false));
+      sidebar?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setSidebar(false)));
+
+      const links = Array.from(document.querySelectorAll('[data-docs-link]'));
+      const sections = links.map((link) => {
+        const id = link.getAttribute('href')?.replace('#', '');
+        return id ? document.getElementById(id) : null;
+      });
+
+      const setActive = (index) => {
+        links.forEach((link, i) => link.classList.toggle('is-active', i === index));
+      };
+
+      const update = () => {
+        const header = document.querySelector('.site-header');
+        const toolbar = document.querySelector('.docs-toolbar');
+        const offset = (header?.offsetHeight ?? 72) + (toolbar?.offsetHeight ?? 0) + 24;
+        let current = 0;
+        sections.forEach((section, index) => {
+          if (section && section.getBoundingClientRect().top <= offset) current = index;
+        });
+        setActive(current);
+      };
+
+      let ticking = false;
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(() => {
+            update();
+            ticking = false;
+          });
+        },
+        { passive: true }
+      );
+      update();
+    })();
+  </script>
+</BaseLayout>

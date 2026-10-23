@@ -1,0 +1,27 @@
+name: CySoulbound
+version: '1.1.3'
+main: com.chenyu.cysoulbound.CySoulbound
+api-version: '1.21'
+authors: [chenyu]
+description: Soulbound items - cannot be dropped, picked up by others, or taken from containers.
+softdepend: [Vault, PlayerPoints]
+libraries:
+  - org.xerial:sqlite-jdbc:3.53.4.0
+commands:
+  cysoulbound:
+    description: CySoulbound main command
+    usage: /cysoulbound help
+    aliases: [csl]
+permissions:
+  cysoulbound.use:
+    description: Bind, unbind and list your own soulbound items
+    default: true
+  cysoulbound.admin:
+    description: List other players, unbind remotely and reload the plugin
+    default: op
+  cysoulbound.bypass:
+    description: Bypass all soulbound protections
+    default: op
+  cysoulbound.economy.bypass:
+    description: Bypass bind and unbind payments only
+    default: false

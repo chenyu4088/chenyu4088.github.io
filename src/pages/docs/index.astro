@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { plugins } from '../../data/plugins';
+---
+
+<BaseLayout
+  title="插件文档 · 33生存"
+  description="33生存自研插件文档：安装、配置、命令、权限、API、GUI 和更新日志。"
+>
+  <section class="page-hero">
+    <div class="container" data-reveal>
+      <div class="page-hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>DOCS</p>
+        <h1>插件文档</h1>
+        <p>
+          14 个自研插件的安装、配置、命令、权限、API 和更新日志。每个插件一个单页，左侧目录跳转。
+        </p>
+
+        <div class="placeholder-actions">
+          <a class="button button-primary" href="/plugins">
+            返回获取插件
+            <Icon name="arrow" size={18} />
+          </a>
+          <a class="button button-ghost" href="/docs/cypass">查看 CyPass 文档</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="module-grid">
+        {plugins.map((plugin) => (
+          <a class="module-card" href={`/docs/${plugin.slug}`} data-reveal>
+            <div class="feature-icon"><Icon name="terminal" size={22} /></div>
+            <h2>{plugin.name}</h2>
+            <p>{plugin.description}</p>
+            <div class="plugin-hero-stats">
+              <span>v{plugin.version}</span>
+              <span>{plugin.cores[0]}</span>
+              <span>{plugin.license}</span>
+            </div>
+            <span class="module-link">查看文档 <Icon name="arrow" size={16} /></span>
+          </a>
+        ))}
+      </div>
+
+      <div class="docs-note" data-reveal>
+        <Icon name="terminal" size={20} />
+        <span>文档以插件项目根目录的 Markdown 为源，网站构建时自动渲染。</span>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

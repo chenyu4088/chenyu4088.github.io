@@ -1,0 +1,200 @@
+name: NotBounties
+version: '1.22.37'
+main: me.jadenp.notbounties.NotBounties
+api-version: 1.13
+authors: [ Not_Jaden ]
+description: kill...
+folia-supported: true
+softdepend:
+  - PlaceholderAPI
+  - HeadDataBase
+  - Vault
+  - LiteBans
+  - SkinsRestorer
+  - BetterTeams
+  - Towny
+  - Geyser-Spigot
+  - floodgate
+  - Kingdoms
+  - Lands
+  - WorldGuard
+  - Factions
+  - Essentials
+  - MythicLib
+  - Duels
+  - SimpleClans
+  - packetevents
+  - Skript
+  - Konquest
+  - EconomyShopGUI
+  - EconomyShopGUI-Premium
+  - CMI
+  - SimpleClaimSystem
+commands:
+  notbounties:
+    description: Use all of the bounty commands.
+    permission: notbounties.player
+  notbountiesadmin:
+    description: Run bounty commands for other people.
+    permission: notbounties.admin
+    aliases:
+      - bountyadmin
+permissions:
+  notbounties.admin:
+    default: op
+    description: Remove or edit bounties.
+    children:
+      - notbounties.cleanEntities
+      - notbounties.spawntracker
+      - notbounties.spawnposter
+  notbounties.cleanentities:
+    default: op
+    description: Use the command /bounty cleanEntities (radius)
+  notbounties.set:
+    default: true
+    description: Set bounties.
+  notbounties.view:
+    default: true
+    description: View bounties and the bounty GUI.
+  notbounties.stats:
+    default: true
+    description: View your player stats and the leaderboard.
+  notbounties.buyown:
+    default: true
+    description: Buy your own bounty.
+  notbounties.immune:
+    default: false
+    description: Immune to having bounties set on them.
+  notbounties.buyimmunity:
+    default: true
+    description: Buy immunity.
+  notbounties.removeimmunity:
+    default: true
+    description: Remove own immunity.
+  notbounties.tracker:
+    default: true
+    description: Use a bounty tracker.
+    children:
+      - notbounties.tracker.exempt
+      - notbounties.tracker.writeempty
+      - notbounties.tracker.wash
+      - notbounties.tracker.craft
+  notbounties.tracker.exempt:
+    default: true
+    description: Exempt yourself from bounty tracking.
+  # These tracker and poster perms override the settings in display.yml
+  notbounties.spawntracker:
+    default: op
+    description: Spawn in a bounty tracker.
+  notbounties.tracker.writeempty:
+    default: true
+    description: Write a bounty into an empty tracker.
+  notbounties.tracker.wash:
+    default: true
+    description: Wash a bounty tracker.
+  notbounties.tracker.craft:
+    default: true
+    description: Craft a bounty tracker.
+  notbounties.poster:
+    default: true
+    description: Use a bounty poster.
+    children:
+      - notbounties.poster.tracking
+      - notbounties.poster.wash
+      - notbounties.poster.craft
+      - notbounties.poster.write
+  notbounties.poster.tracking:
+    default: true
+    description: Click on a poster with an empty tracker to track it.
+  notbounties.spawnposter:
+    default: op
+    description: Spawn in a bounty poster.
+  notbounties.poster.wash:
+    default: true
+    description: Wash a bounty poster.
+  notbounties.poster.craft:
+    default: true
+    description: Craft a bounty poster.
+  notbounties.poster.write:
+    default: true
+    description: Write a bounty poster to an empty map.
+  notbounties.whitelist:
+    default: true
+    description: Whitelist players to claim your bounty.
+  notbounties.basic:
+    default: true
+    description: Use help, tutorial, and broadcast commands.
+    children:
+      - notbounties.basic.tutorial
+      - notbounties.basic.broadcast
+      - notbounties.basic.help
+  notbounties.basic.tutorial:
+    default: true
+    description: Use the tutorial command.
+  notbounties.basic.broadcast:
+    default: true
+    description: Use the broadcast command.
+  notbounties.basic.help:
+    default: true
+    description: Use the help command.
+  notbounties.removeset:
+    default: false
+    description: Remove bounties you set.
+  notbounties.challenges:
+    default: true
+    description: View bounty challenges.
+  notbounties.claim:
+    default: true
+    description: Claim a bounty.
+  notbounties.player:
+    description: All the basic player permissions.
+    default: true
+    children:
+      - notbounties.set
+      - notbounties.view
+      - notbounties.buyown
+      - notbounties.buyimmunity
+      - notbounties.removeimmunity
+      - notbounties.tracker
+      - notbounties.whitelist
+      - notbounties.basic
+      - notbounties.challenges
+      - notbounties.stats
+      - notbounties.claim
+      - notbounties.sort
+      - notbounties.poster
+      - notbounties.gui
+      - notbounties.hunt
+  notbounties.immunity.murder:
+    default: false
+    description: Immune to murder auto-bounties.
+  notbounties.immunity.random:
+    default: false
+    description: Immune to random auto-bounties.
+  notbounties.immunity.timed:
+    default: false
+    description: Immune to timed auto-bounties.
+  notbounties.immunity.tracked:
+    default: false
+    description: Immune to being tracked with a bounty tracker.
+  notbounties.hunt:
+    default: true
+    description: Allow players to use the bounty hunt feature.
+    children:
+      - notbounties.hunt.start
+      - notbounties.hunt.participate
+  notbounties.hunt.start:
+    default: true
+    description: Start a bounty hunt.
+  notbounties.hunt.participate:
+    default: true
+    description: Join or leave a bounty hunt.
+  notbounties.sort:
+    default: true
+    description: Sort guis.
+  notbounties.gui:
+    default: true
+    description: Open a GUI.
+libraries:
+  - com.mysql:mysql-connector-j:9.4.0
+  - io.lettuce:lettuce-core:7.2.1.RELEASE

@@ -1,0 +1,60 @@
+name: EnchantTransfer
+version: 1.4
+main: com.enchanttransfer.EnchantTransfer
+api-version: 1.21
+author: liuxingyu2001
+description: Minecraft附魔转移插件
+
+commands:
+  enchanttransfer:
+    description: 打开附魔转移界面
+    aliases: [et]
+    usage: /et [history|stats|reload|help]
+    permission: enchanttransfer.use
+
+permissions:
+  enchanttransfer.use:
+    description: 使用附魔转移功能
+    default: true
+  enchanttransfer.admin:
+    description: 管理员权限
+    default: op
+  enchanttransfer.history:
+    description: 查看转移记录
+    default: true
+  enchanttransfer.stats:
+    description: 查看统计信息
+    default: true
+  enchanttransfer.reload:
+    description: 重新加载配置
+    default: op
+  enchanttransfer.bypass.cooldown:
+    description: 绕过冷却时间
+    default: op
+  enchanttransfer.bypass.limit:
+    description: 绕过使用限制
+    default: op
+  enchanttransfer.bypass.cross-type:
+    description: 绕过装备类型限制
+    default: op
+  enchanttransfer.vip1:
+    description: VIP1等级折扣
+    default: false
+  enchanttransfer.vip2:
+    description: VIP2等级折扣
+    default: false
+  enchanttransfer.vip3:
+    description: VIP3等级折扣
+    default: false
+  enchanttransfer.free:
+    description: 免费使用
+    default: op
+
+depend:
+  - Vault
+
+softdepend:
+  - PlayerPoints
+  - AdvancedEnchantments
+  - CrazyEnchantments
+  - EnchantsSquared

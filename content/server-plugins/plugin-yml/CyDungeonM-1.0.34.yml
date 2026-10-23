@@ -1,0 +1,37 @@
+name: CyDungeonM
+version: '1.0.34'
+main: com.cy.dungeonm.CyDungeonM
+api-version: '1.21'
+
+# ★ Paper 会在启动时从 Maven 中央仓库拉取到服务端 libraries/ 目录
+libraries:
+  - org.xerial:sqlite-jdbc:3.43.2.1
+author: chenyu
+description: 副本菜单附属 —— 菜单界面 / 队伍管理 / 排行榜 / 商店
+
+# QueDP 是核心依赖；其它都是可选的软依赖
+depend:
+  - QueDP
+
+softdepend:
+  - Vault
+  - PlayerPoints
+  - PlaceholderAPI
+  - CraftEngine
+
+commands:
+  cdm:
+    description: CyDungeonM 主指令
+    aliases: [cydungeonm]
+    usage: "输入 /cdm 查看帮助"
+
+permissions:
+  cydungeonm.use:
+    description: 打开菜单 / 排行榜 / 商店
+    default: true
+  cydungeonm.party:
+    description: 使用队伍功能
+    default: true
+  cydungeonm.admin:
+    description: 管理权限（reload / info / debug）
+    default: op

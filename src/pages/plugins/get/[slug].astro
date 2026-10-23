@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Icon from '../../../components/Icon.astro';
+import { plugins, type PluginInfo, type PluginLicense } from '../../../data/plugins';
+import { site } from '../../../data/site';
+
+export function getStaticPaths() {
+  return plugins.map((plugin) => ({
+    params: { slug: plugin.slug },
+    props: { plugin },
+  }));
+}
+
+interface Props {
+  plugin: PluginInfo;
+}
+
+const { plugin } = Astro.props;
+
+const licenseLabel = (license: PluginLicense) =>
+  license === '待定' ? '授权待定' : license;
+
+const licenseClass = (license: PluginLicense) =>
+  license === '免费' ? 'is-free' : license === '付费' ? 'is-paid' : 'is-pending';
+---
+
+<BaseLayout
+  title={`获取 ${plugin.name} · 33生存`}
+  description={`获取 33生存插件 ${plugin.name}：${plugin.tagline}。当前通过作者获取，网盘和直链暂未开放。`}
+>
+  <section class="page-hero plugin-get-hero">
+    <div class="container">
+      <div class="page-hero-copy" data-reveal>
+        <p class="eyebrow"><span class="eyebrow-dot"></span>GET PLUGIN</p>
+        <h1>{plugin.name}</h1>
+        <p>{plugin.tagline}。{plugin.description}</p>
+
+        {plugin.highlights && plugin.highlights.length > 0 && (
+          <div class="plugin-highlights">
+            {plugin.highlights.map((highlight) => (
+              <span class="plugin-highlight">{highlight}</span>
+            ))}
+          </div>
+        )}
+
+        <div class="plugin-hero-stats">
+          <span class={`plugin-license ${licenseClass(plugin.license)}`}>{licenseLabel(plugin.license)}</span>
+          <span>v{plugin.version}</span>
+          <span>{plugin.cores.join(' / ')}</span>
+        </div>
+
+        <div class="placeholder-actions">
+          <a class="button button-ghost" href="/plugins">
+            <Icon name="arrow" size={16} />
+            返回插件列表
+          </a>
+          <a class="button button-ghost" href={`/docs/${plugin.slug}`}>查看文档</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section plugin-get-section">
+    <div class="container">
+      <div class="plugin-get-head" data-reveal>
+        <p class="eyebrow"><span class="eyebrow-dot"></span>HOW TO GET</p>
+        <h2>获取方式</h2>
+        <p>当前只有作者直接获取。网盘和直链还没有配置，先留空。</p>
+      </div>
+
+      <div class="module-grid">
+        <div class="module-card" data-reveal>
+          <div class="download-card-head">
+            <span class="download-index">01</span>
+            <h2>联系作者</h2>
+            <span class="download-badge">当前唯一</span>
+          </div>
+          <div class="feature-icon"><Icon name="terminal" size={22} /></div>
+          <p>
+            {plugin.license === '付费'
+              ? '付费插件：联系作者购买后获取。说明插件名、服务器版本和用途。'
+              : '免费插件：联系作者获取安装包。说明插件名、服务器版本和用途。'}
+          </p>
+
+          {site.contact.link ? (
+            <a class="button button-primary button-small" href={site.contact.link} target="_blank" rel="noreferrer">
+              {site.contact.label}
+              <Icon name="arrow" size={16} />
+            </a>
+          ) : (
+            <span class="button button-ghost button-small is-disabled" aria-disabled="true">
+              联系方式待补
+            </span>
+          )}
+          <span class="module-link is-muted">作者联系方式确认后直接显示在这里</span>
+        </div>
+
+        <div class="module-card" data-reveal>
+          <div class="download-card-head">
+            <span class="download-index">02</span>
+            <h2>夸克网盘</h2>
+          </div>
+          <div class="feature-icon"><Icon name="cube" size={22} /></div>
+          <p>插件安装包之后会放夸克网盘，目前还没有配置链接。</p>
+          <span class="button button-ghost button-small is-disabled" aria-disabled="true">链接待补</span>
+          <span class="module-link is-muted">暂未开放</span>
+        </div>
+
+        <div class="module-card" data-reveal>
+          <div class="download-card-head">
+            <span class="download-index">03</span>
+            <h2>百度网盘</h2>
+          </div>
+          <div class="feature-icon"><Icon name="leaf" size={22} /></div>
+          <p>百度网盘作为备用线路，目前还没有配置分享链接。</p>
+          <span class="button button-ghost button-small is-disabled" aria-disabled="true">链接待补</span>
+          <span class="module-link is-muted">暂未开放</span>
+        </div>
+
+        <div class="module-card" data-reveal>
+          <div class="download-card-head">
+            <span class="download-index">04</span>
+            <h2>直链下载</h2>
+          </div>
+          <div class="feature-icon"><Icon name="spark" size={22} /></div>
+          <p>直链还没有确定托管方式，开放后会放在这里。</p>
+          <span class="button button-ghost button-small is-disabled" aria-disabled="true">暂未开放</span>
+          <span class="module-link is-muted">暂未开放</span>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <strong>{plugin.name}：</strong>{plugin.description} 获取前请确认服务器版本为 {plugin.cores.join(' / ')}。
+      </div>
+    </div>
+  </section>
+</BaseLayout>

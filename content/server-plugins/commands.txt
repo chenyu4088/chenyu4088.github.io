@@ -1,0 +1,242 @@
+## AntiCloneTool (1.4.7)
+- anticlonetool | aliases=act | permission=- | default=- | Default command | usage=/anticlonetool <arg>
+
+## BalanceFormatter (1.0)
+- balanceformatter | aliases=- | permission=balanceformatter.admin | default=op | Reloadet das Plugin | usage=/balanceformatter reload
+
+## CyDriverCore (1.10.12)
+- cdc | aliases=cydriver | permission=- | default=- | CyDriverCore 主指令 | usage=/cdc <reload|stats|doctor|skills|item|show|give|list|probe|handlers|placeholder|debug|version>
+
+## CyDungeonM (1.0.34)
+- cdm | aliases=cydungeonm | permission=- | default=- | CyDungeonM 主指令 | usage=输入 /cdm 查看帮助
+
+## CyEnchantEnhancement (2.2.7)
+- CyEnchantEnhancement | aliases=cee | permission=- | default=- | 强化系统主指令 | usage=/CyEnchantEnhancement <open|reload|book|stone|enchant>
+
+## CyExppond (4.0.0)
+- cyexppond | aliases=cep | permission=- | default=- | CyExppond 管理命令 | usage=/cyexppond help
+
+## CyPass (1.1.12)
+- cypass | aliases=- | permission=- | default=- | 通行证主指令 | usage=/cypass <menu|quests|rewards|shop|info|claim|season|admin>
+- pass | aliases=- | permission=- | default=- | 打开通行证 | usage=/pass
+
+## CyPay (1.6.8)
+- cypay | aliases=- | permission=- | default=- | CyPay 主指令 | usage=/cypay help
+- cp | aliases=- | permission=- | default=- | CyPay 主指令（简写） | usage=/cp help
+
+## CyRedeem (1.4.6)
+- cr | aliases=cyredeem, redeem | permission=- | default=- | CyRedeem 主指令 | usage=/cr <create|open|reload|delete|list>
+
+## CySoulbound (1.1.3)
+- cysoulbound | aliases=csl | permission=- | default=- | CySoulbound main command | usage=/cysoulbound help
+
+## CySuperFurnace (1.0.0)
+- cysuperfurnace | aliases=csf | permission=- | default=- | CySuperFurnace 主指令 | usage=/cysuperfurnace help
+
+## CyTop (1.2.2)
+- cytop | aliases=ct | permission=- | default=- | CyTop 主命令 | usage=输入 /ct help 查看帮助
+
+## FakePlayers (1.0.0)
+- bot | aliases=- | permission=fakeplayers.use | default=op | Manage fake players (bots) | usage=/bot <spawn|remove|list|action|tp> [args]
+- tab | aliases=- | permission=fakeplayers.tab | default=op | Toggle tab display options | usage=/tab <tps|ping|health|status>
+- player | aliases=- | permission=fakeplayers.use | default=op | Perform continuous actions on yourself | usage=/player <use|attack|jump|sneak|stop> [continuous|once]
+
+## EnchantTransfer (1.4)
+- enchanttransfer | aliases=et | permission=enchanttransfer.use | default=True | 打开附魔转移界面 | usage=/et [history|stats|reload|help]
+
+## LiuInvite (1.2)
+- invite | aliases=invite | permission=liuinvite.use | default=True | 邀请系统主命令 | usage=/invite <bind|gui|list|reload> [player]
+
+## LiuReward (1.1.5)
+- liureward | aliases=lr, liur | permission=- | default=- | 在线奖励主指令 | usage=/lr [指令]
+
+## Vulcan (2.9.7.22)
+- alerts | aliases=- | permission=- | default=- | Toggle on and off Vulcan's alert messages. | usage=/<command>
+- vulcan | aliases=- | permission=- | default=- | Vulcan's main command. | usage=/<command>
+- jday | aliases=- | permission=- | default=- | Manage Vulcan's Judgement Day feature. | usage=/<command>
+- logs | aliases=- | permission=- | default=- | In-game violations.txt access. | usage=/<command>
+- punishlogs | aliases=- | permission=- | default=- | In-game punishments.txt access. | usage=/<command>
+
+## PlaceholderAPI (2.12.2)
+- placeholderapi | aliases=papi | permission=- | default=- | PlaceholderAPI Command | usage=
+
+## JEIServerProxy (1.0.2-SNAPSHOT)
+- jeiproxy | aliases=- | permission=jeiserverproxy.admin | default=op | JEIServerProxy 的主命令。 | usage=/<command> <reload|handshake>
+
+## WarZMotd (1.1.3)
+- motd | aliases=zmotd, wzmotd | permission=warzmotd.use | default=True | WarZMotd 主命令 | usage=/motd [reload|list|set|maintenance|help]
+
+## Citizens (2.0.43-SNAPSHOT (build 4211))
+- trait | aliases=- | permission=citizens.trait.help | default=- | Trait commands | usage=
+- citizens | aliases=- | permission=citizens.citizens.help | default=- | Administration commands | usage=
+- npc | aliases=- | permission=citizens.npc.help | default=- | Basic commands for all NPC-related things | usage=
+- template | aliases=tpl | permission=citizens.templates.help | default=- | Template commands | usage=
+- waypoints | aliases=wp | permission=citizens.waypoints.help | default=- | Waypoint commands | usage=
+
+## YuRandomTeleport (1.2.0.2)
+- yurtp | aliases=rtp | permission=- | default=- | 随机传送 | usage=/yurtp [player] [world] 或 /yurtp reload|help
+
+## TAB (6.1.0)
+- tab | aliases=- | permission=- | default=- | Plugin's main command | usage=
+
+## McMmoView (2.0.3)
+- mcMmoView | aliases=mmv | permission=- | default=- | mcMMO可视化gui | usage=
+
+## TerraformGenerator (27.0.1)
+- terraform | aliases=terra | permission=- | default=- | Main command | usage=
+
+## BookNews (6.26)
+- booknews | aliases=- | permission=- | default=- | Admin Command | usage=/<command> [reload|news]
+- news | aliases=- | permission=- | default=- | Check News | usage=/<command>
+
+## SweetPlayerMarket (1.0.17)
+- sweetplayermarket | aliases=spm, pm, playermarket | permission=- | default=- | The main command of SweetPlayerMarket | usage=
+
+## CMILib (1.5.9.9)
+- cmil | aliases=- | permission=- | default=- | basic command | usage=
+
+## ProtocolLib (5.5.0-SNAPSHOT-0e267a5)
+- protocol | aliases=- | permission=protocol.admin | default=op | Performs administrative tasks regarding ProtocolLib. | usage=/<command> config|check|update|timings|listeners|version|dump
+- packet | aliases=- | permission=protocol.admin | default=op | Add or remove a simple packet listener. | usage=/<command> add|remove|names client|server [ID start]-[ID stop] [detailed]
+- filter | aliases=packet_filter | permission=protocol.admin | default=op | Add or remove programmable filters to the packet listeners. | usage=/<command> add|remove name [ID start]-[ID stop]
+- packetlog | aliases=- | permission=protocol.admin | default=op | Logs hex representations of packets to a file or console | usage=/<command> <protocol> <sender> <packet> [location]
+
+## CoreProtect (24.0)
+- co | aliases=- | permission=coreprotect.co | default=True | Utilize the plugin | usage=/<command> <params>
+- core | aliases=- | permission=coreprotect.core | default=False | Utilize the plugin | usage=/<command> <params>
+- coreprotect | aliases=- | permission=coreprotect.coreprotect | default=False | Utilize the plugin | usage=/<command> <params>
+
+## PlayerWarp (2.4.4-free)
+- playerWarp | aliases=plw | permission=- | default=- | 玩家地标插件 | usage=
+
+## PlotSquared (7.5.13-Premium)
+- plots | aliases=p, plot, ps, plotsquared, p2, 2, plotme | permission=plots.use | default=True | Plot command. | usage=
+
+## CMI (9.8.8.2)
+- cmi | aliases=- | permission=- | default=- | basic command | usage=
+
+## PlayerGuild (2.17.1)
+- playerGuild | aliases=plg | permission=- | default=- | 玩家公会插件 | usage=
+
+## FotiaCrates (1.1.9)
+- crate | aliases=crates, fc | permission=- | default=- | FotiaCrates main command | usage=/<command> [args]
+
+## mcBuildTools (1.0)
+- mcbt | aliases=buildtools, mcbtools | permission=- | default=- | mcBuildTools 管理命令 | usage=/mcbt give <工具名> [玩家] | /mcbt list | /mcbt reload
+
+## NotBounties (1.22.37)
+- notbounties | aliases=- | permission=notbounties.player | default=True | Use all of the bounty commands. | usage=
+- notbountiesadmin | aliases=bountyadmin | permission=notbounties.admin | default=op | Run bounty commands for other people. | usage=
+
+## WarZNeverLag (2.2.7)
+- neverlag | aliases=nl | permission=- | default=- | 主命令 | usage=/neverlag
+
+## mcMMO (2.3.001-SNAPSHOT)
+- mmoxpbar | aliases=xpbarsettings | permission=- | default=- | Change XP bar settings | usage=
+- mmodebug | aliases=mcmmodebugmode | permission=- | default=- | Toggles a debug mode which will print useful information to chat | usage=
+- mmoinfo | aliases=mcinfo | permission=mcmmo.commands.mmoinfo | default=- | Info pages for mcMMO | usage=
+- xprate | aliases=mcxprate | permission=mcmmo.commands.xprate | default=- | View or modify the xp rate or start an event | usage=
+- mcmmo | aliases=- | permission=mcmmo.commands.mcmmo | default=- | Shows a brief mod description | usage=
+- mctop | aliases=- | permission=mcmmo.commands.mctop | default=- | Show mcMMO leader boards | usage=
+- mcrank | aliases=- | permission=mcmmo.commands.mcrank | default=- | Show mcMMO ranking for a player | usage=
+- addxp | aliases=- | permission=mcmmo.commands.addxp | default=- | Add mcMMO XP to a user | usage=
+- addlevels | aliases=- | permission=mcmmo.commands.addlevels | default=- | Add mcMMO levels to a user | usage=
+- mcability | aliases=- | permission=mcmmo.commands.mcability | default=- | Toggle whether abilities get readied on right click | usage=
+- mcrefresh | aliases=- | permission=mcmmo.commands.mcrefresh | default=- | Refresh all cooldowns for mcMMO | usage=
+- mccooldown | aliases=mccooldowns | permission=mcmmo.commands.mccooldown | default=- | Show the cooldowns on all your mcMMO abilities | usage=
+- mcchatspy | aliases=- | permission=mcmmo.commands.mcchatspy | default=- | Toggle mcMMO Party Chat spying on/off | usage=
+- mcgod | aliases=- | permission=mcmmo.commands.mcgod | default=- | Toggle mcMMO god-mode on/off | usage=
+- mcstats | aliases=stats | permission=mcmmo.commands.mcstats | default=- | Shows your mcMMO stats and xp | usage=
+- mcremove | aliases=- | permission=mcmmo.commands.mcremove | default=- | Remove a user from the database | usage=
+- mmoedit | aliases=- | permission=mcmmo.commands.mmoedit | default=- | Edit the mcMMO skill values for a user | usage=
+- ptp | aliases=- | permission=mcmmo.commands.ptp | default=- | Teleport to a party member | usage=
+- party | aliases=- | permission=mcmmo.commands.party | default=- | Create/join a party | usage=
+- inspect | aliases=mcinspect, mmoinspect | permission=mcmmo.commands.inspect | default=- | View detailed mcMMO info on another player | usage=
+- mmoshowdb | aliases=- | permission=mcmmo.commands.mmoshowdb | default=- | Show the name of the current database type (for later use with /mmoupdate) | usage=
+- mcconvert | aliases=- | permission=mcmmo.commands.mcconvert | default=- | Convert between different database and formula types | usage=
+- partychat | aliases=pc, p | permission=mcmmo.chat.partychat | default=- | Toggle Party chat or send party chat messages | usage=
+- skillreset | aliases=- | permission=mcmmo.commands.skillreset | default=- | Reset the level of one or all of your skills | usage=
+- excavation | aliases=- | permission=mcmmo.commands.excavation | default=- | Detailed mcMMO skill info | usage=
+- herbalism | aliases=- | permission=mcmmo.commands.herbalism | default=- | Detailed mcMMO skill info | usage=
+- mining | aliases=- | permission=mcmmo.commands.mining | default=- | Detailed mcMMO skill info | usage=
+- woodcutting | aliases=- | permission=mcmmo.commands.woodcutting | default=- | Detailed mcMMO skill info | usage=
+- axes | aliases=- | permission=mcmmo.commands.axes | default=- | Detailed mcMMO skill info | usage=
+- archery | aliases=- | permission=mcmmo.commands.archery | default=- | Detailed mcMMO skill info | usage=
+- crossbows | aliases=- | permission=mcmmo.commands.crossbows | default=- | Detailed mcMMO skill info | usage=
+- swords | aliases=- | permission=mcmmo.commands.swords | default=- | Detailed mcMMO skill info | usage=
+- taming | aliases=- | permission=mcmmo.commands.taming | default=- | Detailed mcMMO skill info | usage=
+- tridents | aliases=- | permission=mcmmo.commands.tridents | default=- | Detailed mcMMO skill info | usage=
+- unarmed | aliases=- | permission=mcmmo.commands.unarmed | default=- | Detailed mcMMO skill info | usage=
+- acrobatics | aliases=- | permission=mcmmo.commands.acrobatics | default=- | Detailed mcMMO skill info | usage=
+- repair | aliases=- | permission=mcmmo.commands.repair | default=- | Detailed mcMMO skill info | usage=
+- fishing | aliases=- | permission=mcmmo.commands.fishing | default=- | Detailed mcMMO skill info | usage=
+- smelting | aliases=- | permission=mcmmo.commands.smelting | default=- | Detailed mcMMO skill info | usage=
+- spears | aliases=- | permission=mcmmo.commands.spears | default=- | Detailed mcMMO skill info | usage=
+- alchemy | aliases=- | permission=mcmmo.commands.alchemy | default=- | Detailed mcMMO skill info | usage=
+- salvage | aliases=- | permission=mcmmo.commands.salvage | default=- | Detailed mcMMO skill info | usage=
+- maces | aliases=- | permission=mcmmo.commands.maces | default=- | Detailed mcMMO skill info | usage=
+- mmopower | aliases=mmopowerlevel, powerlevel | permission=mcmmo.commands.mmopower | default=- | Shows skill mastery and power level info | usage=
+- adminchat | aliases=ac, a | permission=mcmmo.chat.adminchat | default=- | Toggle Admin chat or send admin chat messages | usage=
+- mcpurge | aliases=- | permission=mcmmo.commands.mcpurge | default=- | Purge users with 0 powerlevel and/or who haven't connected in several months from the server DB. | usage=
+- mcnotify | aliases=notify | permission=mcmmo.commands.mcnotify | default=- | Toggle mcMMO abilities chat display notifications on/off | usage=
+- mclevelupsound | aliases=levelupsound | permission=mcmmo.commands.mclevelupsound | default=- | Toggle the mcMMO level-up sound on/off | usage=
+- mcscoreboard | aliases=mcsb | permission=mcmmo.commands.mcscoreboard | default=- | Manage your mcMMO Scoreboard | usage=
+- mcmmoreloadlocale | aliases=mcreloadlocale | permission=mcmmo.commands.reloadlocale | default=- | Reloads locale | usage=
+
+## PlugManX (3.0.4)
+- plugman | aliases=plm | permission=plugman.help | default=op | Manage plugins. | usage=/plugman (help|dump) /plugman list [-v] /plugman check <plugin|all> [-f] /plugman lookup <command> /plugman (enable|disable|restart) <plugin|all> /plugman (info|usage|load|reload|unload) <plugin>
+
+## LuckPerms (5.5.58)
+- luckperms | aliases=lp, perm, perms, permission, permissions | permission=- | default=- | Manage permissions | usage=
+
+## ModelEngine (R4.1.0)
+- meg | aliases=- | permission=- | default=- | All things Model Engine related. | usage=
+
+## AuthMe (6.0.0-b2734)
+- authme | aliases=- | permission=- | default=- | AuthMe op commands | usage=/authme register|unregister|forcelogin|password|lastlogin|accounts|email|setemail|getip|totp|disabletotp|spawn|setspawn|firstspawn|setfirstspawn|purge|purgeplayer|backup|resetpos|purgebannedplayers|switchantibot|reload|version|converter|messages|recent|premium|freemium|debug
+- email | aliases=- | permission=- | default=- | Add email or recover password | usage=/email show|add|change|recover|code|setpassword|confirm
+- login | aliases=l, log | permission=- | default=- | Login command | usage=/login <password>
+- logout | aliases=- | permission=- | default=- | Logout command | usage=/logout
+- register | aliases=reg | permission=- | default=- | Register an account | usage=/register [password] [verifyPassword]
+- unregister | aliases=unreg | permission=- | default=- | Unregister an account | usage=/unregister <password>
+- changepassword | aliases=changepass, cp | permission=- | default=- | Change password of an account | usage=/changepassword <oldPassword> <newPassword>
+- totp | aliases=2fa | permission=- | default=- | TOTP commands | usage=/totp code|add|confirm|remove
+- captcha | aliases=- | permission=- | default=- | Captcha command | usage=/captcha <captcha>
+- verification | aliases=- | permission=- | default=- | Verification command | usage=/verification <code>
+- premium | aliases=- | permission=- | default=- | Enable premium mode | usage=/premium
+- freemium | aliases=- | permission=- | default=- | Disable premium mode | usage=/freemium
+
+## MythicMobs (5.13.0-SNAPSHOT-1abf9862)
+- mythicmobs | aliases=mm | permission=- | default=- | MythicMobs base command | usage=
+- mythicmobsmenu | aliases=mmmenu, mmm | permission=- | default=- | MythicMobs menu command | usage=
+- spawnmob | aliases=spawnmythicmob, mspawn, msummon | permission=- | default=- | Spawn a mob | usage=
+- pins | aliases=pin | permission=- | default=- | Easier command for pins | usage=
+- addpin | aliases=- | permission=- | default=- | quickly adds a pin | usage=
+
+## PlayerTitle (5.0.6-free)
+- playerTitle | aliases=plt | permission=- | default=- | 玩家称号 | usage=
+
+## PlayerSignIn (1.3.2)
+- playerSignIn | aliases=psi | permission=- | default=- | 玩家签到 | usage=
+
+## Vault (1.7.3-CMI)
+- vault-info | aliases=- | permission=vault.admin | default=op | Displays information about Vault | usage=/<command> - Displays Vault information
+- vault-convert | aliases=- | permission=vault.admin | default=op | Converts all data in economy1 and dumps it into economy2 | usage=/<command> [economy1] [economy2]
+
+## PlayerChat (3.4.2)
+- playerChat | aliases=plc | permission=- | default=- | 一款有点好用的聊天插件 | usage=
+- lb | aliases=lb | permission=- | default=- | 一款有点好用的聊天插件 | usage=
+
+## ArcPass (1.9.4)
+- arcpass | aliases=ap, battlepass, bp, pass | permission=- | default=- | ArcPass main command | usage=/<command> [args]
+
+## Chunky (1.4.40)
+- chunky | aliases=cy | permission=chunky.command | default=op | Generates chunks | usage=/chunky
+
+## Residence (6.0.1.1)
+- res | aliases=- | permission=- | default=- | Manage Residences | usage=
+- residence | aliases=- | permission=- | default=- | Manage Residences | usage=
+- resadmin | aliases=- | permission=- | default=- | Residence admin functions. | usage=§c/res ? or /resadmin ? for more info
+- resreload | aliases=- | permission=- | default=- | Reload the entire residence plugin. | usage=§c/resreload
+- resload | aliases=- | permission=- | default=- | Load the save file again after you have made modifications. | usage=§c/resload
+- rc | aliases=- | permission=- | default=- | §cChat in current residence channel. | usage=§c/rc §eto toggle, §c/rc l §eto leave, §c/rc setprefix §eto set prefix, §c/rc setcolor §eto set color or §c/rc kick §eto kick player

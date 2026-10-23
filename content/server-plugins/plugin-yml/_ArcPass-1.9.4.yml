@@ -1,0 +1,71 @@
+name: ArcPass
+version: 1.9.4
+main: com.kitemc.arcpass.ArcPassPlugin
+api-version: "1.20"
+description: Modern Battle Pass plugin for Minecraft servers
+author: KiteMC
+website: https://kitemc.com
+
+folia-supported: true
+
+softdepend:
+  - Vault
+  - CMI
+  - PlaceholderAPI
+  - LuckPerms
+  - DeluxeTags
+  - TAB
+  - PlayerTitle
+  - PlayerParticles
+  - NametagEdit
+  - PlayerPoints
+  - CoinsEngine
+  - TokenManager
+  - MythicMobs
+  - Jobs
+  - Oraxen
+  - ItemsAdder
+
+commands:
+  arcpass:
+    description: ArcPass main command
+    usage: /<command> [args]
+    aliases: [ap, battlepass, bp, pass]
+
+permissions:
+  arcpass.use:
+    description: Basic usage permission
+    default: true
+    
+  arcpass.command.*:
+    description: All command permissions
+    default: op
+    children:
+      arcpass.command.level: true
+      arcpass.command.quests: true
+      arcpass.command.claim: true
+      arcpass.command.buy: true
+      
+  arcpass.command.level:
+    description: View pass level
+    default: true
+    
+  arcpass.command.quests:
+    description: View quests
+    default: true
+    
+  arcpass.command.claim:
+    description: Claim rewards
+    default: true
+    
+  arcpass.command.buy:
+    description: Purchase tier upgrades
+    default: true
+    
+  arcpass.admin:
+    description: Admin permissions
+    default: op
+    
+  arcpass.bypass.cooldown:
+    description: Bypass cooldowns
+    default: op

@@ -1,0 +1,68 @@
+
+name: LiuReward
+version: 1.1.5
+main: com.liuxingyu.linlinereward.LonlineReward
+api-version: 1.21
+author: liuxingyu2001
+description: 我的世界在线奖励插件
+# 均为软依赖：未安装时插件照常运行，仅对应功能（变量/CraftEngine模型）自动降级
+softdepend: [PlaceholderAPI, CraftEngine]
+
+commands:
+  liureward:
+    description: 在线奖励主指令
+    aliases: [lr, liur]
+    usage: /lr [指令]
+
+permissions:
+  liureward.*:
+    description: 所有权限
+    default: op
+  
+  liureward.menu.default:
+    description: 访问普通玩家菜单
+    default: true
+  
+  liureward.menu.vip:
+    description: 访问VIP玩家菜单
+    default: false
+  
+  liureward.open:
+    description: 打开奖励界面
+    default: true
+  
+  liureward.open.other:
+    description: 为其他玩家打开奖励界面
+    default: op
+  
+  liureward.set:
+    description: 设置玩家在线时长
+    default: op
+  
+  liureward.get:
+    description: 查看玩家在线时长
+    default: op
+  
+  liureward.give:
+    description: 给予玩家在线时长
+    default: op
+  
+  liureward.claimall:
+    description: 一键领取所有奖励（自己的）
+    default: true
+  
+  liureward.claimall.other:
+    description: 一键领取其他玩家的奖励
+    default: op
+  
+  liureward.bypassip:
+    description: 豁免同IP检测
+    default: op
+  
+  liureward.reload:
+    description: 重载插件
+    default: op
+  
+  liureward.admin:
+    description: 管理员权限(数据库测试/转换)
+    default: op

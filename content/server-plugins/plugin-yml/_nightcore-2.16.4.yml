@@ -1,0 +1,57 @@
+main: su.nightexpress.nightcore.NightCore
+bootstrapper: su.nightexpress.nightcore.NightCoreBootstrap
+loader: su.nightexpress.nightcore.NightCoreLoader
+name: nightcore
+version: '2.16.4'
+description: Plugin engine
+load: STARTUP
+folia-supported: true
+authors:
+  - NightExpress
+libraries:
+  - com.zaxxer:HikariCP:6.3.2
+  - it.unimi.dsi:fastutil-core:8.5.16
+api-version: 1.21
+dependencies:
+  server:
+    Vault:
+      required: false
+    LuckPerms:
+      required: false
+    PlaceholderAPI:
+      required: false
+    floodgate:
+      required: false
+    CoinsEngine:
+      load: AFTER
+      required: false
+    ExcellentEconomy:
+      load: AFTER
+      required: false
+    PlayerPoints:
+      load: AFTER
+      required: false
+    VotingPlugin:
+      load: AFTER
+      required: false
+    ExcellentCrates:
+      load: AFTER
+      required: false
+    ExecutableItems:
+      load: AFTER
+      required: false
+    ItemsAdder:
+      load: AFTER
+      required: false
+    MMOItems:
+      load: AFTER
+      required: false
+    Nexo:
+      load: AFTER
+      required: false
+    Oraxen:
+      load: AFTER
+      required: false
+    CraftEngine:
+      load: AFTER
+      required: false

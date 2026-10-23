@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from 'astro:content';
+import DocsLayout from '../../layouts/DocsLayout.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  return docs.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+const sections = headings
+  .filter((heading) => heading.depth === 2)
+  .map((heading) => ({ id: heading.slug, label: heading.text }));
+---
+
+<DocsLayout
+  pluginName={entry.data.pluginName}
+  version={entry.data.version}
+  license={entry.data.license}
+  cores={entry.data.cores}
+  summary={entry.data.summary}
+  slug={entry.data.slug}
+  sections={sections}
+>
+  <div class="docs-markdown">
+    <Content />
+  </div>
+</DocsLayout>

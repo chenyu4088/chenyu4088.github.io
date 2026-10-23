@@ -1,0 +1,16 @@
+
+
+#         Powered by TabooLib 6.2         #
+
+
+name: QueDP
+main: org.Shanque.quedp.taboolib.platform.BukkitPlugin
+version: 1.4.1
+authors:
+  - 'ShanQue'
+  - 'YuaZer'
+softdepend:
+  - 'MythicMobs'
+  - 'WorldEdit'
+api-version: 1.13
+folia-supported: true

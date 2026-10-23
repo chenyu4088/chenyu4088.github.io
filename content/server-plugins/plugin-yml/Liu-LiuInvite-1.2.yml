@@ -1,0 +1,28 @@
+name: LiuInvite
+version: 1.2
+main: com.liuinvite.LiuInvite
+api-version: "1.21"
+author: liuxingyu2001
+description: 老玩家邀请新玩家奖励系统
+
+softdepend:
+  - Liupass
+  - CMI
+  - PlaceholderAPI
+  - Vault
+
+commands:
+  invite:
+    description: 邀请系统主命令
+    usage: /invite <bind|gui|list|reload> [player]
+    permission: liuinvite.use
+    aliases:
+      - invite
+
+permissions:
+  liuinvite.use:
+    description: 使用邀请系统
+    default: true
+  liuinvite.admin:
+    description: 管理员权限
+    default: op

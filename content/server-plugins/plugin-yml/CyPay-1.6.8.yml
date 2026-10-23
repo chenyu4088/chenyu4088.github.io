@@ -1,0 +1,63 @@
+name: CyPay
+version: '1.6.8'
+main: cn.chenyu.cypay.CyPay
+api-version: '1.21'
+author: chenyu
+description: 扫码支付与固定收款码地图展示插件
+softdepend:
+  - CraftEngine
+  - PlaceholderAPI
+libraries:
+  - org.xerial:sqlite-jdbc:3.53.4.0
+
+commands:
+  cypay:
+    description: CyPay 主指令
+    usage: /cypay help
+  cp:
+    description: CyPay 主指令（简写）
+    usage: /cp help
+
+permissions:
+  cypay.admin:
+    description: CyPay 管理员总权限（含全部子权限）
+    default: op
+    children:
+      cypay.point: true
+      cypay.open: true
+      cypay.log: true
+      cypay.log.others: true
+      cypay.top: true
+      cypay.reward: true
+      cypay.reward.logs: true
+      cypay.consume: true
+      cypay.reload: true
+  cypay.point:
+    description: 玩家充值下单
+    default: op
+  cypay.open:
+    description: 打开收款码地图（调试）
+    default: op
+  cypay.log:
+    description: 查询自己的充值记录
+    default: op
+  cypay.log.others:
+    description: 查询任意玩家的充值记录（含全服记录）
+    default: op
+    children:
+      cypay.log: true
+  cypay.top:
+    description: 查看充值排行榜
+    default: op
+  cypay.reward:
+    description: 打开累充奖励界面 / 查看自己的领取记录
+    default: op
+  cypay.reward.logs:
+    description: 查看全服累充领取记录
+    default: op
+  cypay.consume:
+    description: 管理玩家累充额度
+    default: op
+  cypay.reload:
+    description: 重载配置
+    default: op

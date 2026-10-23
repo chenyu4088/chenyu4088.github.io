@@ -1,0 +1,18 @@
+name: BalanceFormatter
+version: 1.0
+main: de.diesofaecke.balanceformatter.BalanceFormatterPlugin
+api-version: '1.21'
+authors: [DieSofaEcke]
+depend: [Vault]
+softdepend: [PlaceholderAPI]
+
+commands:
+  balanceformatter:
+    description: Reloadet das Plugin
+    usage: /balanceformatter reload
+    permission: balanceformatter.admin
+
+permissions:
+  balanceformatter.admin:
+    description: Darf das Plugin reloaden
+    default: op

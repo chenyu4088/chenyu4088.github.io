@@ -1,0 +1,32 @@
+name: FakePlayers
+version: '1.0.0'
+main: com.fakeplayers.FakePlayersPlugin
+api-version: '1.21.4'
+description: Carpet-like bots + TPS/ping/health tab for Paper 1.21.11
+author: FakePlayers
+depend: [FancyNpcs]
+
+commands:
+  bot:
+    description: Manage fake players (bots)
+    usage: /bot <spawn|remove|list|action|tp> [args]
+    permission: fakeplayers.use
+  tab:
+    description: Toggle tab display options
+    usage: /tab <tps|ping|health|status>
+    permission: fakeplayers.tab
+  player:
+    description: Perform continuous actions on yourself
+    usage: /player <use|attack|jump|sneak|stop> [continuous|once]
+    permission: fakeplayers.use
+
+permissions:
+  fakeplayers.use:
+    description: Usar comandos /bot
+    default: op
+  fakeplayers.admin:
+    description: /bot remove all
+    default: op
+  fakeplayers.tab:
+    description: Toggle tab display
+    default: op

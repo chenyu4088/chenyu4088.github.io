@@ -1,0 +1,19 @@
+name: WarZNeverLag
+version: 2.2.7
+main: me.crazy_jky.warzneverlag.WarZNeverLag
+api-version: '1.20'
+folia-supported: true
+description: A modernized optimization plugin for WarZ servers.
+authors: [Crazy_Jky]
+website: https://github.com/Crazy-Jky
+
+commands:
+  neverlag:
+    description: 主命令
+    usage: /neverlag
+    aliases: [nl]
+
+permissions:
+  neverlag.admin:
+    description: 管理员权限
+    default: op

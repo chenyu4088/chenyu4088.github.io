@@ -1,0 +1,71 @@
+name: CyPass
+version: '1.1.12'
+main: com.chenyu.cypass.CyPass
+api-version: '1.21'
+description: 通行证系统 - 赛季 / 任务 / 等级奖励 / 通行证商店 / 管理面板
+author: chenyu
+
+# ★ 数据库驱动【不打进 jar】，由 Paper 运行期加载（jar 只有几百 KB）
+#   服务器 libraries/ 里已经有这个版本，正常情况连下载都不会触发
+libraries:
+  - org.xerial:sqlite-jdbc:3.49.1.0
+
+# 软依赖：装了更好，没装也照常启动
+softdepend:
+  - PlaceholderAPI
+  - Vault
+  - PlayerPoints
+  - LuckPerms
+  - MythicMobs
+
+commands:
+  cypass:
+    description: 通行证主指令
+    usage: /cypass <menu|quests|rewards|shop|info|claim|season|admin>
+  # ★ 按用户要求加的：直接打开通行证主页面
+  #   ★ 注意：ArcPass 也把 pass 当别名用了。
+  #     两个插件同时装着的话会有一个抢不到 —— 控制台会打警告。
+  #     换掉 ArcPass 之后就没这个问题了。
+  pass:
+    description: 打开通行证
+    usage: /pass
+
+permissions:
+
+  cypass.use:
+    description: 基本使用权限
+    default: true
+
+  cypass.admin:
+    description: 管理权限（父节点）
+    default: op
+    children:
+      cypass.admin.season: true
+      cypass.admin.player: true
+      cypass.admin.reward: true
+      cypass.admin.reload: true
+
+  cypass.admin.season:
+    description: 赛季管理
+    default: op
+
+  cypass.admin.player:
+    description: 玩家管理
+    default: op
+
+  cypass.admin.reward:
+    description: 奖励发放
+    default: op
+
+  cypass.admin.reload:
+    description: 重载配置
+    default: op
+
+  # 经验倍率（VIP）—— 具体倍率在 config.yml 里配
+  cypass.exp.2x:
+    description: 经验 2 倍
+    default: false
+
+  cypass.exp.3x:
+    description: 经验 3 倍
+    default: false

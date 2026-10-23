@@ -1,0 +1,41 @@
+
+
+#         Powered by TabooLib 6.2         #
+
+
+name: TrMenu
+main: me.arasple.mc.trmenu.taboolib.platform.BukkitPlugin
+version: 3.9.25
+authors:
+  - 'Arasple'
+  - 'Score2'
+softdepend:
+  - 'MagicCosmetics'
+  - 'PlaceholderAPI'
+  - 'Zaphkiel'
+  - 'Skulls'
+  - 'Vault'
+  - 'PlayerPoints'
+  - 'HeadDatabase'
+  - 'Oraxen'
+  - 'SkinsRestorer'
+  - 'ItemsAdder'
+  - 'floodgate'
+  - 'FastScript'
+  - 'Triton'
+  - 'MMOItems'
+  - 'MagicGem'
+  - 'NeigeItems'
+  - 'EcoItems'
+  - 'MythicMobs'
+  - 'HMCCosmetics'
+  - 'PxRpg'
+  - 'Nexo'
+  - 'NBTAPI'
+  - 'TrMenu-Graal'
+  - 'AzureFlow'
+  - 'CraftEngine'
+  - 'SX-Item'
+api-version: 1.13
+description: Modern & Advanced Menu-Plugin for Minecraft Servers
+folia-supported: true

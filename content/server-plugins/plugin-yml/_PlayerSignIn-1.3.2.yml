@@ -1,0 +1,41 @@
+name: PlayerSignIn
+main: cn.handyplus.sign.in.PlayerSignIn
+version: 1.3.2
+author: handy
+website: https://ricedoc.handyplus.cn/wiki/PlayerSignIn/log
+api-version: 1.13
+softdepend: [ PlaceholderAPI, AuthMe, CatSeedLogin, OauthLogin ]
+description: 玩家签到
+folia-supported: true
+commands:
+  playerSignIn:
+    description: 玩家签到
+    aliases: [ psi ]
+permissions:
+  playerSignIn.*:
+    description: 离线变量
+    children:
+      playerSignIn.reload: true
+      playerSignIn.convert: true
+      playerSignIn.signIn: true
+      playerSignIn.giveSignCard: true
+      playerSignIn.card: true
+      playerSignIn.default: true
+  playerSignIn.reload:
+    description: 重新加载配置
+    default: op
+  playerSignIn.convert:
+    description: 转换数据源
+    default: op
+  playerSignIn.signIn:
+    description: 签到gui
+    default: true
+  playerSignIn.giveSignCard:
+    description: 给予实体补签卡
+    default: op
+  playerSignIn.card:
+    description: 管理虚拟补签卡
+    default: op
+  playerSignIn.default:
+    description: 默认权限
+    default: true
