@@ -9,7 +9,7 @@ summary: 铁砧惩罚重置：手持“过于昂贵”的物品，付费清除�
 
 ## 简介
 
-CyAnvilPunishReset 用来清除物品的铁砧惩罚（“过于昂贵”）。玩家手持带有惩罚的物品，执行 `/capr reset` 发起重置，再输入 `/capr confirm` 确认并扣除金币。
+CyAnvilPunishReset 用来清除物品的铁砧惩罚（“过于昂贵”）。玩家手持带有惩罚的物品，执行 `/apr reset` 发起重置，再输入 `/apr confirm` 确认并扣除金币。
 
 **核心功能**
 
@@ -34,16 +34,16 @@ CyAnvilPunishReset 用来清除物品的铁砧惩罚（“过于昂贵”）。�
 2. 重启服务器，生成 `config.yml`。
 3. 设置 `settings.reset-cost` 和 `confirm-timeout`。
 4. 给玩家 `cyanvilpunishreset.reset` 权限。
-5. 手持带有铁砧惩罚的物品，执行 `/capr reset`。
+5. 手持带有铁砧惩罚的物品，执行 `/apr reset`。
 
 ## 玩家命令
 
 | 命令 | 作用 |
 |---|---|
-| `/capr help` / `/cyanvilpunishreset help` | 查看帮助 |
-| `/capr info` | 查看手持物品的铁砧惩罚信息 |
-| `/capr reset` | 发起重置（需主手持有物品） |
-| `/capr confirm` | 确认重置并扣除花费 |
+| `/apr help` / `/cyanvilpunishreset help` | 查看帮助 |
+| `/apr info` | 查看手持物品的铁砧惩罚信息 |
+| `/apr reset` | 发起重置（需主手持有物品） |
+| `/apr confirm` | 确认重置并扣除花费 |
 
 `confirm-timeout` 内不确认会失效，需要重新发起。
 
@@ -51,8 +51,8 @@ CyAnvilPunishReset 用来清除物品的铁砧惩罚（“过于昂贵”）。�
 
 | 命令 | 作用 |
 |---|---|
-| `/capr reload` | 重载配置 |
-| `/capr admin reset <玩家>` | 为指定在线玩家重置主手物品 |
+| `/apr reload` | 重载配置 |
+| `/apr admin reset <玩家>` | 为指定在线玩家重置主手物品 |
 
 ## 权限
 
@@ -75,7 +75,7 @@ settings:
   debug: false
 
 messages:
-  reset-prompt: "&7输入 &f/capr confirm &7确认重置，将花费 &f{cost} &7金币"
+  reset-prompt: "&7输入 &f/apr confirm &7确认重置，将花费 &f{cost} &7金币"
   reset-confirm: "&7已重置手持物品的铁砧惩罚，花费 &f{cost} &7金币"
   reset-no-money: "&7金币不足，需要 &f{cost} &7金币"
   no-item: "&7主手没有持有物品"
@@ -101,7 +101,7 @@ CyAnvilPunishReset 当前版本**没有公开 API**，也**没有注册独立的
 
 ### 提示“该物品没有铁砧惩罚”？
 
-物品没有“过于昂贵”惩罚，或惩罚已经被清除。可以先用 `/capr info` 查看。
+物品没有“过于昂贵”惩罚，或惩罚已经被清除。可以先用 `/apr info` 查看。
 
 ### 扣款失败怎么办？
 
@@ -109,7 +109,7 @@ CyAnvilPunishReset 当前版本**没有公开 API**，也**没有注册独立的
 
 ### 确认超时了？
 
-默认 60 秒内输入 `/capr confirm`；超时需要重新 `/capr reset`。
+默认 60 秒内输入 `/apr confirm`；超时需要重新 `/apr reset`。
 
 ## 更新日志
 
@@ -118,7 +118,7 @@ CyAnvilPunishReset 当前版本**没有公开 API**，也**没有注册独立的
 ### 2.0.0（2026-10-08 · 当前版本）
 
 - 当前版本；项目此前没有独立更新日志，先记录当前版本。
-- 支持 `/capr reset` / `confirm`、管理员远程重置和配置重载。
+- 支持 `/apr reset` / `confirm`、管理员远程重置和配置重载。
 - 支持金币收费、确认超时和详细提示。
 
 ### 1.0.0

@@ -1356,13 +1356,13 @@ a.module-card:hover {
 }
 
 .guide-sidebar-title {
-  margin: 0 0 8px;
+  margin: 0 0 12px;
   padding: 0 10px;
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
 }
 
 .guide-sidebar nav {
@@ -1370,29 +1370,77 @@ a.module-card:hover {
   gap: 2px;
 }
 
-.guide-nav-label {
-  margin: 18px 10px 5px;
-  color: var(--text);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.75;
+.guide-nav-group {
+  display: grid;
+  gap: 2px;
 }
 
-.guide-nav-label:first-child {
-  margin-top: 0;
+.guide-nav-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.guide-nav-label:hover {
+  background: var(--surface);
+  color: var(--primary);
+}
+
+.guide-nav-chevron {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  margin-right: 3px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  opacity: 0.55;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.guide-nav-group.is-open > .guide-nav-label .guide-nav-chevron {
+  transform: rotate(225deg) translate(-1px, -1px);
+}
+
+.guide-nav-group.is-current > .guide-nav-label {
+  color: var(--primary);
+}
+
+.guide-nav-sub {
+  display: none;
+  padding: 0 0 4px 8px;
+}
+
+.guide-nav-group.is-open > .guide-nav-sub {
+  display: grid;
+  gap: 2px;
 }
 
 .guide-sidebar nav a {
   display: flex;
   align-items: baseline;
   gap: 8px;
-  padding: 8px 10px;
+  padding: 7px 10px 7px 18px;
   border-radius: 8px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.5;
   transition:
     color 0.2s ease,
@@ -1698,12 +1746,22 @@ a.module-card:hover {
 }
 
 .command-panel {
-  display: none;
+  display: block;
   scroll-margin-top: calc(var(--header-h) + 80px);
 }
 
-.command-panel.is-active {
-  display: block;
+.command-panel + .command-panel {
+  margin-top: 34px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+
+.guide-card[id^="tool-"] {
+  scroll-margin-top: calc(var(--header-h) + 80px);
+}
+
+#tools .guide-grid {
+  grid-template-columns: 1fr;
 }
 
 .command-table-wrap {

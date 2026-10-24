@@ -20,37 +20,86 @@ import { guideSearchIndex } from '../data/guide-search';
 
         <p class="guide-sidebar-title">目录</p>
         <nav aria-label="指南目录">
-          <p class="guide-nav-label">开始</p>
-          <a href="#start" class="is-active">进服</a>
+          <div class="guide-nav-group is-open" data-guide-group>
+            <button class="guide-nav-label" type="button" data-guide-group-toggle aria-expanded="true">
+              <span>开始</span>
+              <span class="guide-nav-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="guide-nav-sub" data-guide-group-panel>
+              <a href="#start" class="is-active">进服</a>
+            </div>
+          </div>
 
-          <p class="guide-nav-label">常用指令</p>
-          <a href="#commands-common" data-command-link>常用</a>
-          <a href="#commands-auth" data-command-link>账号</a>
-          <a href="#commands-basic" data-command-link>基础</a>
-          <a href="#commands-teleport" data-command-link>传送</a>
-          <a href="#commands-economy" data-command-link>经济商店</a>
-          <a href="#commands-social" data-command-link>技能公会</a>
-          <a href="#commands-welfare" data-command-link>福利外观</a>
-          <a href="#commands-other" data-command-link>其他</a>
+          <div class="guide-nav-group" data-guide-group>
+            <button class="guide-nav-label" type="button" data-guide-group-toggle aria-expanded="false">
+              <span>常用指令</span>
+              <span class="guide-nav-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="guide-nav-sub" data-guide-group-panel>
+              <a href="#commands-common">常用</a>
+              <a href="#commands-basic">基础</a>
+              <a href="#commands-teleport">传送</a>
+              <a href="#commands-economy">经济商店</a>
+              <a href="#commands-social">技能公会</a>
+              <a href="#commands-welfare">福利外观</a>
+              <a href="#commands-other">其他</a>
+            </div>
+          </div>
 
-          <p class="guide-nav-label">世界</p>
-          <a href="#residence">领地</a>
-          <a href="#plot">地皮</a>
+          <div class="guide-nav-group" data-guide-group>
+            <button class="guide-nav-label" type="button" data-guide-group-toggle aria-expanded="false">
+              <span>玩法</span>
+              <span class="guide-nav-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="guide-nav-sub" data-guide-group-panel>
+              <a href="#menu">菜单</a>
+              <a href="#bounty">通缉令</a>
+              <a href="#enhance">强化</a>
+              <a href="#dungeon">副本</a>
+              <a href="#pass">通行证</a>
+              <a href="#redeem">兑换</a>
+              <a href="#furnace">超级熔炉</a>
+              <a href="#peach">蟠桃</a>
+              <a href="#death-penalty">死亡惩罚</a>
+              <a href="#exppond">挂机池</a>
+              <a href="#top">排行榜</a>
+            </div>
+          </div>
 
-          <p class="guide-nav-label">玩法</p>
-          <a href="#menu">菜单</a>
-          <a href="#enhance">强化</a>
-          <a href="#dungeon">副本</a>
-          <a href="#pass">通行证</a>
-          <a href="#redeem">兑换</a>
-          <a href="#soulbound">灵魂绑定</a>
-          <a href="#furnace">超级熔炉</a>
-          <a href="#peach">蟠桃</a>
-          <a href="#exppond">挂机池</a>
-          <a href="#top">排行榜</a>
+          <div class="guide-nav-group" data-guide-group>
+            <button class="guide-nav-label" type="button" data-guide-group-toggle aria-expanded="false">
+              <span>世界</span>
+              <span class="guide-nav-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="guide-nav-sub" data-guide-group-panel>
+              <a href="#residence">领地</a>
+              <a href="#plot">地皮</a>
+            </div>
+          </div>
 
-          <p class="guide-nav-label">其他</p>
-          <a href="#faq">FAQ</a>
+          <div class="guide-nav-group" data-guide-group>
+            <button class="guide-nav-label" type="button" data-guide-group-toggle aria-expanded="false">
+              <span>工具</span>
+              <span class="guide-nav-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="guide-nav-sub" data-guide-group-panel>
+              <a href="#tool-soulspace">灵魂空间</a>
+              <a href="#tool-enchant-transfer">附魔转移</a>
+              <a href="#tool-anvil-reset">铁砧惩罚重置</a>
+              <a href="#tool-copy-protection">复制保护</a>
+              <a href="#soulbound">灵魂绑定</a>
+            </div>
+          </div>
+
+          <div class="guide-nav-group" data-guide-group>
+            <button class="guide-nav-label" type="button" data-guide-group-toggle aria-expanded="false">
+              <span>其他</span>
+              <span class="guide-nav-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="guide-nav-sub" data-guide-group-panel>
+              <a href="#faq">FAQ</a>
+            </div>
+          </div>
         </nav>
 
         <div class="guide-sidebar-group">
@@ -154,7 +203,7 @@ import { guideSearchIndex } from '../data/guide-search';
       <p class="eyebrow"><span class="eyebrow-dot"></span>QUICK COMMANDS</p>
       <h2>指令速查</h2>
       <p class="guide-lead">
-        从左侧目录选择分类。这里只收玩家命令；领地、地皮、副本的完整教程在下面章节。
+        下面按分类列出常用玩家命令，页面会完整展开；左侧目录只负责快速跳转。指南优先使用服务器提供的简写命令，完整命令通常也能用；领地、地皮、副本的完整教程在后续章节。
       </p>
 
       <div class="command-panels">
@@ -176,43 +225,15 @@ import { guideSearchIndex } from '../data/guide-search';
               <tr><td><code>/pm open</code></td><td>全球玩家市场</td></tr>
               <tr><td><code>/res tp &lt;领地名&gt;</code></td><td>传送到领地</td></tr>
               <tr><td><code>/plot home</code></td><td>回自己的地皮</td></tr>
-              <tr><td><code>/esystem open</code></td><td>打开强化面板</td></tr>
+              <tr><td><code>/cee open</code></td><td>打开强化面板</td></tr>
               <tr><td><code>/cdm menu</code></td><td>副本主菜单</td></tr>
               <tr><td><code>/psi</code></td><td>每日签到</td></tr>
-              <tr><td><code>/crate</code></td><td>抽奖箱</td></tr>
+              <tr><td><code>/fc</code></td><td>抽奖箱</td></tr>
               <tr><td><code>/plt</code></td><td>称号界面</td></tr>
             </tbody>
           </table>
         </div>
         <div class="note-box"><strong>提示：</strong>下面是分类；领地、地皮、副本、兑换、灵魂绑定等完整说明在后续章节。</div>
-      </div>
-
-      <div class="command-panel" id="commands-auth" role="tabpanel" data-command-panel="auth">
-        <h3>账号登录</h3>
-        <p class="guide-lead">
-          账号登录在启动器/登录入口完成，进入服务器后不需要在聊天栏输入任何登录或注册命令。
-        </p>
-        <div class="guide-grid">
-          <article class="guide-card">
-            <h3>首次进入</h3>
-            <ol>
-              <li>打开启动器，注册或登录账号</li>
-              <li>启动 Minecraft Java 版 1.21.11</li>
-              <li>添加服务器 mc33.top 并进入</li>
-              <li>进入后直接开始游玩，不用在聊天栏输密码</li>
-            </ol>
-          </article>
-          <article class="guide-card">
-            <h3>提示未登录 / 账号异常</h3>
-            <ul>
-              <li>退出启动器，重新登录账号</li>
-              <li>确认启动器和游戏使用的是同一个账号</li>
-              <li>仍然进不去就在群里反馈，附上报错截图</li>
-              <li>不要在游戏聊天栏里发密码</li>
-            </ul>
-          </article>
-        </div>
-        <div class="note-box"><strong>说明：</strong>游戏内不再有注册/登录命令。登录问题在启动器或登录页面解决。</div>
       </div>
 
       <div class="command-panel" id="commands-basic" role="tabpanel" data-command-panel="basic">
@@ -337,10 +358,10 @@ import { guideSearchIndex } from '../data/guide-search';
           <table class="command-table">
             <thead><tr><th>命令</th><th>作用</th></tr></thead>
             <tbody>
-              <tr><td><code>/mcstats</code> / <code>/mctop</code> / <code>/mcrank</code></td><td>技能/排行/自己的排名</td></tr>
+              <tr><td><code>/stats</code> / <code>/mctop</code> / <code>/mcrank</code></td><td>技能/排行/自己的排名</td></tr>
               <tr><td><code>/mmopower</code> / <code>/mcability</code></td><td>总能力/开关技能</td></tr>
-              <tr><td><code>/mccooldown</code> / <code>/mcnotify</code></td><td>冷却/提示</td></tr>
-              <tr><td><code>/party</code> / <code>/ptp</code> / <code>/partychat</code></td><td>队伍/传送/队伍聊天</td></tr>
+              <tr><td><code>/mccooldown</code> / <code>/notify</code></td><td>冷却/提示</td></tr>
+              <tr><td><code>/party</code> / <code>/ptp</code> / <code>/pc</code></td><td>队伍/传送/队伍聊天</td></tr>
               <tr><td><code>/mining</code> / <code>/woodcutting</code> / <code>/excavation</code></td><td>查看对应技能</td></tr>
               <tr><td><code>/herbalism</code> / <code>/fishing</code> / <code>/repair</code></td><td>查看对应技能</td></tr>
               <tr><td><code>/swords</code> / <code>/axes</code> / <code>/archery</code></td><td>查看战斗技能</td></tr>
@@ -384,12 +405,12 @@ import { guideSearchIndex } from '../data/guide-search';
             <thead><tr><th>功能</th><th>命令</th><th>作用</th></tr></thead>
             <tbody>
               <tr><td>每日签到</td><td><code>/psi</code> / <code>/psi</code></td><td>每日签到</td></tr>
-              <tr><td>抽奖箱</td><td><code>/crate</code> / <code>/fc</code></td><td>抽奖箱界面</td></tr>
-              <tr><td>抽奖箱</td><td><code>/crate open &lt;箱子&gt;</code></td><td>用钥匙开指定抽奖箱</td></tr>
+              <tr><td>抽奖箱</td><td><code>/fc</code></td><td>抽奖箱界面</td></tr>
+              <tr><td>抽奖箱</td><td><code>/fc open &lt;箱子&gt;</code></td><td>用钥匙开指定抽奖箱</td></tr>
               <tr><td>在线奖励</td><td><code>/lr</code> / <code>/liur</code></td><td>在线奖励界面</td></tr>
               <tr><td>邀请</td><td><code>/invite</code></td><td>邀请系统界面</td></tr>
               <tr><td>邀请</td><td><code>/invite list</code> / <code>bind &lt;玩家&gt;</code></td><td>邀请列表/绑定关系</td></tr>
-              <tr><td>通行证</td><td><code>/pass</code> / <code>/arcpass</code> / <code>/cypass</code></td><td>通行证主界面</td></tr>
+              <tr><td>通行证</td><td><code>/pass</code> / <code>/ap</code></td><td>通行证主界面</td></tr>
               <tr><td>通行证</td><td><code>/cypass quests|rewards|shop|claim|season</code></td><td>任务/奖励/商店/领取</td></tr>
             </tbody>
           </table>
@@ -430,152 +451,6 @@ import { guideSearchIndex } from '../data/guide-search';
       </div>
       </div>
     </section>
-
-    <section class="guide-section" data-reveal id="residence">
-      <p class="eyebrow"><span class="eyebrow-dot"></span>LAND</p>
-      <h2>领地与保护</h2>
-      <p class="guide-lead">
-        领地可以保护你的建筑、箱子和区域。手持服务器指定的选区工具，左键点一个角、右键点对角，然后创建领地。
-      </p>
-
-      <div class="guide-grid">
-        <article class="guide-card">
-          <h3>1. 选区</h3>
-          <ul>
-            <li>先输入 <code>/res tool</code> 看本服选区工具（常见是木斧或木锄）</li>
-            <li>左键一个角、右键对角；也可以 <code>/res select</code> 或 <code>/res select chunk</code></li>
-            <li><code>/res select size</code> 查看选区大小</li>
-          </ul>
-        </article>
-        <article class="guide-card">
-          <h3>2. 创建</h3>
-          <ul>
-            <li><code>/res create &lt;名称&gt;</code> 创建领地</li>
-            <li><code>/res subzone &lt;名称&gt;</code> 创建子领地（需要权限组允许）</li>
-            <li><code>/res auto</code> 在脚下自动创建最大允许范围</li>
-          </ul>
-        </article>
-        <article class="guide-card">
-          <h3>3. 权限</h3>
-          <ul>
-            <li><code>/res set &lt;flag&gt; true/false</code> 设置整个领地</li>
-            <li><code>/res pset &lt;玩家&gt; &lt;flag&gt; true/false</code> 给指定玩家开权限</li>
-            <li>常用 flag：<code>build</code>、<code>use</code>、<code>container</code>、<code>move</code>、<code>pvp</code></li>
-          </ul>
-        </article>
-      </div>
-
-      <h3>选区与创建命令</h3>
-      <div class="command-table-wrap">
-        <table class="command-table">
-          <thead>
-            <tr><th>命令</th><th>作用</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>/res tool</code></td><td>查看本服使用的选区工具</td></tr>
-            <tr><td><code>/res select</code></td><td>用工具或坐标选区</td></tr>
-            <tr><td><code>/res select chunk</code></td><td>选中整个区块</td></tr>
-            <tr><td><code>/res select auto</code></td><td>切换自动选区模式</td></tr>
-            <tr><td><code>/res select size</code></td><td>查看选区大小</td></tr>
-            <tr><td><code>/res select vert</code></td><td>选区从天空延伸到基岩</td></tr>
-            <tr><td><code>/res create &lt;名称&gt;</code></td><td>创建领地</td></tr>
-            <tr><td><code>/res subzone &lt;名称&gt;</code></td><td>在领地内创建子区域（需权限）</td></tr>
-            <tr><td><code>/res auto</code></td><td>在脚下自动创建最大允许的领地</td></tr>
-            <tr><td><code>/res confirm</code></td><td>确认删除等危险操作</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>日常管理命令</h3>
-      <div class="command-table-wrap">
-        <table class="command-table">
-          <thead>
-            <tr><th>命令</th><th>作用</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>/res current</code></td><td>查看你当前所在的领地</td></tr>
-            <tr><td><code>/res info</code></td><td>查看领地信息</td></tr>
-            <tr><td><code>/res list</code></td><td>查看自己的领地列表</td></tr>
-            <tr><td><code>/res limits</code></td><td>查看自己的领地数量/范围上限</td></tr>
-            <tr><td><code>/res show</code></td><td>显示当前领地边界</td></tr>
-            <tr><td><code>/res expand &lt;数量&gt;</code></td><td>向面朝方向扩大领地</td></tr>
-            <tr><td><code>/res contract &lt;数量&gt;</code></td><td>向面朝方向缩小领地</td></tr>
-            <tr><td><code>/res tp &lt;名称&gt;</code></td><td>传送到领地</td></tr>
-            <tr><td><code>/res tpset</code></td><td>设置领地传送点</td></tr>
-            <tr><td><code>/res rename &lt;旧名&gt; &lt;新名&gt;</code></td><td>重命名领地</td></tr>
-            <tr><td><code>/res message &lt;领地&gt; &lt;enter/leave&gt; &lt;文本&gt;</code></td><td>设置进出提示</td></tr>
-            <tr><td><code>/res padd &lt;玩家&gt;</code></td><td>把玩家加入领地</td></tr>
-            <tr><td><code>/res pdel &lt;玩家&gt;</code></td><td>把玩家移出领地</td></tr>
-            <tr><td><code>/res pset &lt;玩家&gt; &lt;flag&gt; &lt;true/false/remove&gt;</code></td><td>设置某个玩家的权限</td></tr>
-            <tr><td><code>/res set &lt;flag&gt; &lt;true/false/remove&gt;</code></td><td>设置整个领地的权限</td></tr>
-            <tr><td><code>/res flags</code></td><td>查看所有可用 flag</td></tr>
-            <tr><td><code>/res check &lt;领地&gt; &lt;flag&gt;</code></td><td>检查某个 flag 的状态</td></tr>
-            <tr><td><code>/res default</code></td><td>恢复默认 flag</td></tr>
-            <tr><td><code>/res give &lt;领地&gt; &lt;玩家&gt;</code></td><td>把领地转让给其他玩家</td></tr>
-            <tr><td><code>/res unstuck</code></td><td>把自己移出当前领地</td></tr>
-            <tr><td><code>/res kick</code></td><td>把玩家踢出领地（仅领地主人）</td></tr>
-            <tr><td><code>/res rc</code></td><td>进入领地聊天频道</td></tr>
-            <tr><td><code>/res rc leave</code></td><td>离开领地聊天频道</td></tr>
-            <tr><td><code>/res remove &lt;名称&gt;</code></td><td>删除领地（不可撤销）</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="note-box">
-        <strong>注意：</strong>以上是领地玩家命令，<code>/resadmin</code>、<code>/res removeall</code>、<code>/res setall</code> 等管理命令不写入。领地数量、范围、价格、子领地和 flag 是否可用，以 <code>/res limits</code>、<code>/res help</code> 和服务器提示为准；不要破坏他人领地。
-      </div>
-    </section>
-
-    <section class="guide-section" data-reveal id="plot">
-      <p class="eyebrow"><span class="eyebrow-dot"></span>PLOT</p>
-      <h2>地皮与建筑</h2>
-      <p class="guide-lead">
-        服务器有独立的地皮区域。先输入 <code>/plot help</code> 查看本服地皮命令；如果没反应，以地皮区告示/菜单为准。
-      </p>
-
-      <div class="guide-grid">
-        <article class="guide-card">
-          <h3>领取地皮</h3>
-          <ul>
-            <li>从主城菜单或传送点进入地皮世界</li>
-            <li><code>/plot auto</code> 自动领取一块空闲地皮</li>
-            <li><code>/plot home</code> 返回自己的地皮</li>
-          </ul>
-        </article>
-        <article class="guide-card">
-          <h3>建造与协作</h3>
-          <ul>
-            <li><code>/plot add &lt;玩家&gt;</code> 添加共同建造</li>
-            <li><code>/plot remove &lt;玩家&gt;</code> 移除成员</li>
-            <li><code>/plot merge &lt;方向&gt;</code> 合并相邻地皮</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="command-table-wrap">
-        <table class="command-table">
-          <thead>
-            <tr><th>命令</th><th>作用</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>/plot auto</code></td><td>自动领取一块空闲地皮</td></tr>
-            <tr><td><code>/plot home</code></td><td>返回自己的地皮</td></tr>
-            <tr><td><code>/plot list</code></td><td>查看自己的地皮</td></tr>
-            <tr><td><code>/plot add &lt;玩家&gt;</code></td><td>添加共同建造成员</td></tr>
-            <tr><td><code>/plot remove &lt;玩家&gt;</code></td><td>移除成员</td></tr>
-            <tr><td><code>/plot merge &lt;方向&gt;</code></td><td>合并相邻地皮</td></tr>
-            <tr><td><code>/plot visit &lt;玩家&gt;</code></td><td>访问别人的地皮</td></tr>
-            <tr><td><code>/plot info</code></td><td>查看当前地皮信息</td></tr>
-            <tr><td><code>/plot help</code></td><td>查看本服地皮命令</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="note-box">
-        <strong>注意：</strong>以上是地皮系统常见命令。33生存 的领取数量、合并范围和权限以服务器实际规则为准；如果 <code>/plot help</code> 没反应，请以地皮区告示/菜单为准。
-      </div>
-    </section>
-
     <section class="guide-section" data-reveal id="menu">
       <p class="eyebrow"><span class="eyebrow-dot"></span>MENU</p>
       <h2>服务器菜单</h2>
@@ -589,76 +464,65 @@ import { guideSearchIndex } from '../data/guide-search';
           <tbody>
             <tr><td><code>/cd</code></td><td>打开主菜单</td></tr>
             <tr><td><code>/cs</code></td><td>打开传送菜单</td></tr>
-            <tr><td><code>/gj</code></td><td>打开工具菜单（VIP）</td></tr>
-            <tr><td><code>/zz</code></td><td>打开购买与赞助</td></tr>
-            <tr><td><code>/cj</code></td><td>打开抽奖钥匙商店</td></tr>
-            <tr><td><code>/qhsd</code></td><td>打开强化商店</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>主菜单里有什么</h3>
-      <div class="guide-grid">
-        <article class="guide-card">
-          <h3>传送菜单</h3>
-          <ul>
-            <li>主城、主世界、下界、末地</li>
-            <li>竞技场、练习场、地皮、经验池</li>
-            <li>资源世界：33世界、资源末地、资源下界</li>
-            <li>部分世界左键回出生点、右键随机传送</li>
-          </ul>
-        </article>
-        <article class="guide-card">
-          <h3>工具菜单（VIP）</h3>
-          <ul>
-            <li>灵魂背包、复制保护、工作台、末影箱</li>
-            <li>铁砧、切石机、砂轮、制图台、织布机、锻造台</li>
-            <li>全球市场、飞行、彩色聊天、发光</li>
-            <li>通缉令、更多附魔</li>
-          </ul>
-        </article>
-        <article class="guide-card">
-          <h3>购买与赞助</h3>
-          <ul>
-            <li>VIP / 大地主 / 飞行权限</li>
-            <li>锋利 255 / 保护 255 / 不可破坏</li>
-            <li>地脉震荡、33币充值</li>
-            <li>价格和库存以菜单内显示为准</li>
-          </ul>
-        </article>
-        <article class="guide-card">
-          <h3>福利与成长</h3>
-          <ul>
-            <li>每日签到、在线奖励</li>
-            <li>赛季通行证、每日任务</li>
-            <li>玩家公会、玩家信息</li>
-            <li>强化面板与强化商店</li>
-          </ul>
-        </article>
-      </div>
-
-      <h3>从菜单直达的常用入口</h3>
-      <div class="command-table-wrap">
-        <table class="command-table">
-          <thead><tr><th>入口</th><th>作用</th></tr></thead>
-          <tbody>
-            <tr><td><code>/cs</code></td><td>传送到主城、资源世界、地皮、经验池等</td></tr>
-            <tr><td><code>/gj</code></td><td>工具、市场、飞行、聊天颜色、通缉令</td></tr>
-            <tr><td><code>/zz</code></td><td>VIP、赞助、点券购买</td></tr>
-            <tr><td><code>/cj</code></td><td>买普通/玩偶抽奖钥匙</td></tr>
-            <tr><td><code>/psi signIn</code></td><td>每日签到</td></tr>
-            <tr><td><code>/lr</code></td><td>在线奖励</td></tr>
-            <tr><td><code>/ap</code></td><td>赛季通行证</td></tr>
-            <tr><td><code>/plg open</code></td><td>玩家公会</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="note-box">
-        <strong>注意：</strong>菜单里的购买按钮会消耗金币或点券，点之前先看物品说明。价格、权限和开放状态以游戏内菜单为准。
+        <strong>说明：</strong>菜单入口暂时只保留 <code>/cd</code> 和 <code>/cs</code>；其他功能以游戏内实际菜单为准。
       </div>
     </section>
+    <section class="guide-section" data-reveal id="bounty">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>BOUNTY</p>
+      <h2>通缉令</h2>
+      <p class="guide-lead">
+        通缉令是玩家之间的悬赏玩法：花金币把目标挂上通缉令，接下通缉并完成目标的玩家可以领取赏金。金额、手续费和领取条件以游戏内界面为准。
+      </p>
 
+      <div class="command-table-wrap">
+        <table class="command-table">
+          <thead><tr><th>命令</th><th>作用</th></tr></thead>
+          <tbody>
+            <tr><td><code>/notbounties</code></td><td>打开通缉令 / 悬赏界面</td></tr>
+            <tr><td><code>/notbounties list</code></td><td>查看当前通缉令列表</td></tr>
+            <tr><td><code>/notbounties info &lt;玩家&gt;</code></td><td>查看指定玩家的通缉信息</td></tr>
+            <tr><td><code>/notbounties place &lt;玩家&gt; &lt;金额&gt;</code></td><td>给指定玩家挂通缉令</td></tr>
+            <tr><td><code>/notbounties cancel &lt;玩家&gt;</code></td><td>取消自己挂出的通缉令</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="guide-grid">
+        <article class="guide-card">
+          <h3>怎么挂通缉令</h3>
+          <ul>
+            <li>准备足够的金币</li>
+            <li>输入 <code>/notbounties place &lt;玩家&gt; &lt;金额&gt;</code></li>
+            <li>也可以打开 <code>/notbounties</code> 界面操作</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>怎么查看和领取</h3>
+          <ul>
+            <li><code>/notbounties list</code> 查看当前通缉目标</li>
+            <li><code>/notbounties info &lt;玩家&gt;</code> 查看单个目标</li>
+            <li>完成目标后按界面提示领取赏金</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>注意</h3>
+          <ul>
+            <li>挂出后金币通常会被扣除，取消规则以界面提示为准</li>
+            <li>不要用通缉令互相刷金币或恶意针对玩家</li>
+            <li>通缉令不是强制 PVP，具体生效范围以服务器规则为准</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="note-box">
+        <strong>说明：</strong>通缉令的金额上限、手续费、领取条件和有效时间以游戏内界面和服务器规则为准。
+      </div>
+    </section>
     <section class="guide-section" data-reveal id="enhance">
       <p class="eyebrow"><span class="eyebrow-dot"></span>ENHANCE</p>
       <h2>强化</h2>
@@ -671,8 +535,7 @@ import { guideSearchIndex } from '../data/guide-search';
           <h3>1. 打开强化</h3>
           <ul>
             <li>主城菜单 →「物品强化」</li>
-            <li>或输入 <code>/esystem open</code></li>
-            <li>没有反应时用 <code>/cee open</code></li>
+            <li>或输入 <code>/cee open</code></li>
           </ul>
         </article>
         <article class="guide-card">
@@ -719,8 +582,7 @@ import { guideSearchIndex } from '../data/guide-search';
         <table class="command-table">
           <thead><tr><th>命令</th><th>作用</th></tr></thead>
           <tbody>
-            <tr><td><code>/esystem open</code></td><td>打开强化面板</td></tr>
-            <tr><td><code>/cee open</code></td><td>强化面板备用入口</td></tr>
+            <tr><td><code>/cee open</code></td><td>打开强化面板（主命令）</td></tr>
             <tr><td><code>/qhsd</code></td><td>打开强化商店</td></tr>
           </tbody>
         </table>
@@ -730,7 +592,6 @@ import { guideSearchIndex } from '../data/guide-search';
         <strong>注意：</strong>强化书等级、成功率、价格和保底数值以游戏内实际显示为准。强化前先确认装备值得投入，保护符不够时不要硬冲高等级。
       </div>
     </section>
-
     <section class="guide-section" data-reveal id="dungeon">
       <p class="eyebrow"><span class="eyebrow-dot"></span>DUNGEON</p>
       <h2>副本与队伍</h2>
@@ -797,7 +658,6 @@ import { guideSearchIndex } from '../data/guide-search';
         </article>
       </div>
     </section>
-
     <section class="guide-section" data-reveal id="pass">
       <p class="eyebrow"><span class="eyebrow-dot"></span>PASS</p>
       <h2>通行证</h2>
@@ -839,7 +699,6 @@ import { guideSearchIndex } from '../data/guide-search';
         </article>
       </div>
     </section>
-
     <section class="guide-section" data-reveal id="redeem">
       <p class="eyebrow"><span class="eyebrow-dot"></span>REDEEM</p>
       <h2>材料兑换</h2>
@@ -853,7 +712,7 @@ import { guideSearchIndex } from '../data/guide-search';
             <tr><th>命令</th><th>作用</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>/cr</code></td><td>打开兑换主界面（别名 <code>/redeem</code>、<code>/cyredeem</code>）</td></tr>
+            <tr><td><code>/cr</code></td><td>打开兑换主界面</td></tr>
             <tr><td><code>/cr open</code></td><td>打开兑换主界面（<code>/cr menu</code> 同义）</td></tr>
             <tr><td><code>/cr help</code></td><td>查看帮助</td></tr>
           </tbody>
@@ -879,35 +738,6 @@ import { guideSearchIndex } from '../data/guide-search';
         </article>
       </div>
     </section>
-
-    <section class="guide-section" data-reveal id="soulbound">
-      <p class="eyebrow"><span class="eyebrow-dot"></span>SOULBOUND</p>
-      <h2>灵魂绑定</h2>
-      <p class="guide-lead">
-        把重要物品绑定到自己名下，死亡不掉落，别人也不能拿走或使用。绑定有费用和数量限制。
-      </p>
-
-      <div class="command-table-wrap">
-        <table class="command-table">
-          <thead>
-            <tr><th>命令</th><th>作用</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>/cysoulbound</code></td><td>查看帮助（别名 <code>/csl</code>）</td></tr>
-            <tr><td><code>/cysoulbound bind</code></td><td>绑定主手物品</td></tr>
-            <tr><td><code>/cysoulbound unbind</code></td><td>解绑主手物品</td></tr>
-            <tr><td><code>/cysoulbound unbind &lt;ID&gt;</code></td><td>按编号解绑自己的记录</td></tr>
-            <tr><td><code>/cysoulbound list</code></td><td>查看自己的绑定列表</td></tr>
-            <tr><td><code>/cysoulbound list &lt;页码&gt;</code></td><td>分页查看绑定列表</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="note-box">
-        <strong>默认规则：</strong>每人最多绑定 1 件，绑定收费 10000 金币；实际费用/上限以服务器配置为准。绑定物品不能丢弃，别人不能拾取、使用、装备、合成或强化。
-      </div>
-    </section>
-
     <section class="guide-section" data-reveal id="furnace">
       <p class="eyebrow"><span class="eyebrow-dot"></span>FURNACE</p>
       <h2>超级熔炉</h2>
@@ -941,7 +771,6 @@ import { guideSearchIndex } from '../data/guide-search';
         </article>
       </div>
     </section>
-
     <section class="guide-section" data-reveal id="peach">
       <p class="eyebrow"><span class="eyebrow-dot"></span>PEACH</p>
       <h2>蟠桃</h2>
@@ -968,7 +797,36 @@ import { guideSearchIndex } from '../data/guide-search';
         </article>
       </div>
     </section>
+    <section class="guide-section" data-reveal id="death-penalty">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>DEATH PENALTY</p>
+      <h2>死亡惩罚</h2>
+      <p class="guide-lead">
+        死亡惩罚已开放。每次死亡会扣除 <strong>50 级经验</strong>；服务器已开启死亡掉落保护，正常死亡不会清空背包。蟠桃血量超过 200 时，死亡会损失一部分蟠桃血量。
+      </p>
 
+      <div class="guide-grid">
+        <article class="guide-card">
+          <h3>会扣什么</h3>
+          <ul>
+            <li>每次死亡：扣除 50 级经验</li>
+            <li>背包物品：受死亡掉落保护，正常死亡不会掉落</li>
+            <li>蟠桃血量超过 200：死亡时损失一部分蟠桃血量</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>怎么降低损失</h3>
+          <ul>
+            <li>重要装备提前做灵魂绑定</li>
+            <li>外出打副本或探索前先清空多余经验</li>
+            <li>蟠桃血量较高时避免无准备的高风险死亡</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="note-box">
+        <strong>说明：</strong>经验扣除和蟠桃血量的具体损失数值以游戏内死亡提示为准；死亡掉落保护只保护正常死亡掉落，不代表所有意外情况都不会损失物品。
+      </div>
+    </section>
     <section class="guide-section" data-reveal id="exppond">
       <p class="eyebrow"><span class="eyebrow-dot"></span>EXP POND</p>
       <h2>经验挂机池</h2>
@@ -1003,7 +861,6 @@ import { guideSearchIndex } from '../data/guide-search';
         </article>
       </div>
     </section>
-
     <section class="guide-section" data-reveal id="top">
       <p class="eyebrow"><span class="eyebrow-dot"></span>LEADERBOARD</p>
       <h2>排行榜</h2>
@@ -1030,7 +887,217 @@ import { guideSearchIndex } from '../data/guide-search';
         </article>
       </div>
     </section>
+    <section class="guide-section" data-reveal id="residence">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>LAND</p>
+      <h2>领地与保护</h2>
+      <p class="guide-lead">
+        领地可以保护你的建筑、箱子和区域。本服圈地工具是<strong>锄头</strong>，不是金铲子；手持锄头左键点一个角、右键点对角，然后创建领地。
+      </p>
 
+      <div class="guide-grid">
+        <article class="guide-card">
+          <h3>1. 选区</h3>
+          <ul>
+            <li>本服圈地工具是<strong>锄头</strong>；也可以先输入 <code>/res tool</code> 确认</li>
+            <li>手持锄头左键一个角、右键对角；也可以 <code>/res select</code> 或 <code>/res select chunk</code></li>
+            <li><code>/res select size</code> 查看选区大小</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>2. 创建</h3>
+          <ul>
+            <li><code>/res create &lt;名称&gt;</code> 创建领地</li>
+            <li><code>/res subzone &lt;名称&gt;</code> 创建子领地（需要权限组允许）</li>
+            <li><code>/res auto</code> 在脚下自动创建最大允许范围</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>3. 权限</h3>
+          <ul>
+            <li><code>/res set &lt;flag&gt; true/false</code> 设置整个领地</li>
+            <li><code>/res pset &lt;玩家&gt; &lt;flag&gt; true/false</code> 给指定玩家开权限</li>
+            <li>常用 flag：<code>build</code>、<code>use</code>、<code>container</code>、<code>move</code>、<code>pvp</code></li>
+          </ul>
+        </article>
+      </div>
+
+      <h3>选区与创建命令</h3>
+      <div class="command-table-wrap">
+        <table class="command-table">
+          <thead>
+            <tr><th>命令</th><th>作用</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>/res tool</code></td><td>查看本服使用的选区工具（本服为锄头）</td></tr>
+            <tr><td><code>/res select</code></td><td>用工具或坐标选区</td></tr>
+            <tr><td><code>/res select chunk</code></td><td>选中整个区块</td></tr>
+            <tr><td><code>/res select auto</code></td><td>切换自动选区模式</td></tr>
+            <tr><td><code>/res select size</code></td><td>查看选区大小</td></tr>
+            <tr><td><code>/res select vert</code></td><td>选区从天空延伸到基岩</td></tr>
+            <tr><td><code>/res create &lt;名称&gt;</code></td><td>创建领地</td></tr>
+            <tr><td><code>/res subzone &lt;名称&gt;</code></td><td>在领地内创建子区域（需权限）</td></tr>
+            <tr><td><code>/res auto</code></td><td>在脚下自动创建最大允许的领地</td></tr>
+            <tr><td><code>/res confirm</code></td><td>确认删除等危险操作</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>日常管理命令</h3>
+      <div class="command-table-wrap">
+        <table class="command-table">
+          <thead>
+            <tr><th>命令</th><th>作用</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>/res current</code></td><td>查看你当前所在的领地</td></tr>
+            <tr><td><code>/res info</code></td><td>查看领地信息</td></tr>
+            <tr><td><code>/res list</code></td><td>查看自己的领地列表</td></tr>
+            <tr><td><code>/res limits</code></td><td>查看自己的领地数量/范围上限</td></tr>
+            <tr><td><code>/res show</code></td><td>显示当前领地边界</td></tr>
+            <tr><td><code>/res expand &lt;数量&gt;</code></td><td>向面朝方向扩大领地</td></tr>
+            <tr><td><code>/res contract &lt;数量&gt;</code></td><td>向面朝方向缩小领地</td></tr>
+            <tr><td><code>/res tp &lt;名称&gt;</code></td><td>传送到领地</td></tr>
+            <tr><td><code>/res tpset</code></td><td>设置领地传送点</td></tr>
+            <tr><td><code>/res rename &lt;旧名&gt; &lt;新名&gt;</code></td><td>重命名领地</td></tr>
+            <tr><td><code>/res message &lt;领地&gt; &lt;enter/leave&gt; &lt;文本&gt;</code></td><td>设置进出提示</td></tr>
+            <tr><td><code>/res padd &lt;玩家&gt;</code></td><td>把玩家加入领地</td></tr>
+            <tr><td><code>/res pdel &lt;玩家&gt;</code></td><td>把玩家移出领地</td></tr>
+            <tr><td><code>/res pset &lt;玩家&gt; &lt;flag&gt; &lt;true/false/remove&gt;</code></td><td>设置某个玩家的权限</td></tr>
+            <tr><td><code>/res set &lt;flag&gt; &lt;true/false/remove&gt;</code></td><td>设置整个领地的权限</td></tr>
+            <tr><td><code>/res flags</code></td><td>查看所有可用 flag</td></tr>
+            <tr><td><code>/res check &lt;领地&gt; &lt;flag&gt;</code></td><td>检查某个 flag 的状态</td></tr>
+            <tr><td><code>/res default</code></td><td>恢复默认 flag</td></tr>
+            <tr><td><code>/res give &lt;领地&gt; &lt;玩家&gt;</code></td><td>把领地转让给其他玩家</td></tr>
+            <tr><td><code>/res unstuck</code></td><td>把自己移出当前领地</td></tr>
+            <tr><td><code>/res kick</code></td><td>把玩家踢出领地（仅领地主人）</td></tr>
+            <tr><td><code>/res rc</code></td><td>进入领地聊天频道</td></tr>
+            <tr><td><code>/res rc leave</code></td><td>离开领地聊天频道</td></tr>
+            <tr><td><code>/res remove &lt;名称&gt;</code></td><td>删除领地（不可撤销）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        <strong>注意：</strong>以上是领地玩家命令，<code>/resadmin</code>、<code>/res removeall</code>、<code>/res setall</code> 等管理命令不写入。领地数量、范围、价格、子领地和 flag 是否可用，以 <code>/res limits</code>、<code>/res help</code> 和服务器提示为准；不要破坏他人领地。
+      </div>
+    </section>
+    <section class="guide-section" data-reveal id="plot">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>PLOT</p>
+      <h2>地皮与建筑</h2>
+      <p class="guide-lead">
+        服务器有独立的地皮区域。先输入 <code>/plot help</code> 查看本服地皮命令；如果没反应，以地皮区告示/菜单为准。
+      </p>
+
+      <div class="guide-grid">
+        <article class="guide-card">
+          <h3>领取地皮</h3>
+          <ul>
+            <li>从主城菜单或传送点进入地皮世界</li>
+            <li><code>/plot auto</code> 自动领取一块空闲地皮</li>
+            <li><code>/plot home</code> 返回自己的地皮</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>建造与协作</h3>
+          <ul>
+            <li><code>/plot add &lt;玩家&gt;</code> 添加共同建造</li>
+            <li><code>/plot remove &lt;玩家&gt;</code> 移除成员</li>
+            <li><code>/plot merge &lt;方向&gt;</code> 合并相邻地皮</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="command-table-wrap">
+        <table class="command-table">
+          <thead>
+            <tr><th>命令</th><th>作用</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>/plot auto</code></td><td>自动领取一块空闲地皮</td></tr>
+            <tr><td><code>/plot home</code></td><td>返回自己的地皮</td></tr>
+            <tr><td><code>/plot list</code></td><td>查看自己的地皮</td></tr>
+            <tr><td><code>/plot add &lt;玩家&gt;</code></td><td>添加共同建造成员</td></tr>
+            <tr><td><code>/plot remove &lt;玩家&gt;</code></td><td>移除成员</td></tr>
+            <tr><td><code>/plot merge &lt;方向&gt;</code></td><td>合并相邻地皮</td></tr>
+            <tr><td><code>/plot visit &lt;玩家&gt;</code></td><td>访问别人的地皮</td></tr>
+            <tr><td><code>/plot info</code></td><td>查看当前地皮信息</td></tr>
+            <tr><td><code>/plot help</code></td><td>查看本服地皮命令</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        <strong>注意：</strong>以上是地皮系统常见命令。33生存 的领取数量、合并范围和权限以服务器实际规则为准；如果 <code>/plot help</code> 没反应，请以地皮区告示/菜单为准。
+      </div>
+    </section>
+    <section class="guide-section" data-reveal id="tools">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>TOOLS</p>
+      <h2>工具</h2>
+      <p class="guide-lead">
+        常用工具集中在 <code>/gj</code> 工具菜单里。下面列出几个容易用到的入口；具体按钮位置和可用范围以游戏内界面为准。
+      </p>
+
+      <div class="guide-grid">
+        <article class="guide-card" id="tool-soulspace">
+          <h3>灵魂空间</h3>
+          <p>
+            入口：<code>/gj</code> 工具菜单 → 灵魂空间。用于查看和管理灵魂空间内的物品；可存放的内容、容量和取出规则以界面提示为准。
+          </p>
+        </article>
+        <article class="guide-card" id="tool-enchant-transfer">
+          <h3>附魔转移</h3>
+          <p>
+            输入 <code>/et</code> 打开附魔转移界面，按提示选择来源装备和目标装备，把附魔转移到另一件装备上。
+          </p>
+          <p>
+            查看记录用 <code>/et history</code>，查看统计用 <code>/et stats</code>。
+          </p>
+        </article>
+        <article class="guide-card" id="tool-anvil-reset">
+          <h3>铁砧惩罚重置</h3>
+          <p>
+            手持提示“过于昂贵”的物品，输入 <code>/apr</code>，按聊天栏提示完成重置。费用、次数和可重置条件以游戏内提示为准。
+          </p>
+        </article>
+        <article class="guide-card" id="tool-copy-protection">
+          <h3>复制保护</h3>
+          <p>
+            入口：<code>/gj</code> 工具菜单 → 复制保护。按界面提示使用；具体保护范围和限制以菜单说明为准。
+          </p>
+        </article>
+      </div>
+
+      <div class="note-box">
+        <strong>说明：</strong>工具菜单里的功能可能会随权限或活动调整。找不到入口时，先确认自己是否已解锁对应权限，再在群里询问。
+      </div>
+    </section>
+    <section class="guide-section" data-reveal id="soulbound">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>SOULBOUND</p>
+      <h2>灵魂绑定</h2>
+      <p class="guide-lead">
+        把重要物品绑定到自己名下，死亡不掉落，别人也不能拿走或使用。绑定有费用和数量限制。
+      </p>
+
+      <div class="command-table-wrap">
+        <table class="command-table">
+          <thead>
+            <tr><th>命令</th><th>作用</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>/csl</code></td><td>查看帮助</td></tr>
+            <tr><td><code>/csl bind</code></td><td>绑定主手物品</td></tr>
+            <tr><td><code>/csl unbind</code></td><td>解绑主手物品</td></tr>
+            <tr><td><code>/csl unbind &lt;ID&gt;</code></td><td>按编号解绑自己的记录</td></tr>
+            <tr><td><code>/csl list</code></td><td>查看自己的绑定列表</td></tr>
+            <tr><td><code>/csl list &lt;页码&gt;</code></td><td>分页查看绑定列表</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box">
+        <strong>默认规则：</strong>每人最多绑定 1 件，绑定收费 10000 金币；实际费用/上限以服务器配置为准。绑定物品不能丢弃，别人不能拾取、使用、装备、合成或强化。
+      </div>
+    </section>
     <section class="guide-section" data-reveal id="faq">
       <p class="eyebrow"><span class="eyebrow-dot"></span>FAQ</p>
       <h2>常见问题</h2>
@@ -1062,7 +1129,7 @@ import { guideSearchIndex } from '../data/guide-search';
         </details>
         <details class="faq-item">
           <summary>死亡惩罚 / 铁砧重置开放吗？<span class="faq-plus" aria-hidden="true">+</span></summary>
-          <p>这两个系统目前没有确认对所有玩家开放，所以不写进主指南；强化已经单独写在「强化」章节。以游戏内实际提示为准。</p>
+          <p>死亡惩罚已开放：每次死亡扣除 50 级经验，死亡掉落保护已开启；蟠桃血量超过 200 时，死亡会损失一部分蟠桃血量。铁砧惩罚重置使用 <code>/apr</code>，具体费用以游戏内提示为准。</p>
         </details>
       </div>
 
@@ -1071,7 +1138,7 @@ import { guideSearchIndex } from '../data/guide-search';
       </div>
 
       <div class="note-box">
-        <strong>覆盖范围：</strong>当前覆盖账号、传送、经济、商店、领地、地皮、菜单、强化、技能、公会、福利、外观、钓鱼、副本等玩家系统；具体数值以服务器内提示为准。
+        <strong>覆盖范围：</strong>当前覆盖传送、经济、商店、领地、地皮、菜单、强化、技能、公会、福利、外观、钓鱼、副本、工具和死亡惩罚等玩家系统；具体数值以服务器内提示为准。
       </div>
     </section>
       </div>
@@ -1101,40 +1168,32 @@ import { guideSearchIndex } from '../data/guide-search';
         setSidebar(false);
       });
 
-      document.querySelectorAll('.guide-sidebar a').forEach((link) => {
-        link.addEventListener('click', () => setSidebar(false));
-      });
+      const groups = Array.from(document.querySelectorAll('[data-guide-group]'));
 
-      const commandLinks = Array.from(document.querySelectorAll('[data-command-link]'));
-      const commandPanels = Array.from(document.querySelectorAll('[data-command-panel]'));
-
-      const showCommandCategory = (id) => {
-        commandPanels.forEach((panel) => {
-          panel.classList.toggle('is-active', panel.id === id);
-        });
-        commandLinks.forEach((link) => {
-          link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
-        });
+      const setGroupOpen = (group, open) => {
+        group.classList.toggle('is-open', open);
+        group.querySelector('[data-guide-group-toggle]')?.setAttribute('aria-expanded', String(open));
       };
 
-      commandLinks.forEach((link) => {
-        link.addEventListener('click', (event) => {
-          const id = (link.getAttribute('href') || '').replace('#', '');
-          if (!id) return;
-          event.preventDefault();
-          showCommandCategory(id);
-          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          history.replaceState(null, '', `#${id}`);
+      const openGroupForLink = (link) => {
+        const group = link.closest('[data-guide-group]');
+        if (group) setGroupOpen(group, true);
+      };
+
+      groups.forEach((group) => {
+        group.querySelector('[data-guide-group-toggle]')?.addEventListener('click', () => {
+          setGroupOpen(group, !group.classList.contains('is-open'));
         });
       });
 
-      if (location.hash.startsWith('#commands-')) {
-        showCommandCategory(location.hash.slice(1));
-      }
+      document.querySelectorAll('.guide-sidebar a').forEach((link) => {
+        link.addEventListener('click', () => {
+          openGroupForLink(link);
+          setSidebar(false);
+        });
+      });
 
-      const links = Array.from(
-        document.querySelectorAll('.guide-sidebar nav a:not([data-command-link])')
-      );
+      const links = Array.from(document.querySelectorAll('.guide-sidebar nav a[href^="#"]'));
       const sections = links.map((link) => {
         const href = link.getAttribute('href');
         return href ? document.querySelector(href) : null;
@@ -1145,8 +1204,12 @@ import { guideSearchIndex } from '../data/guide-search';
           links.forEach((link, i) => {
             const active = i === index;
             link.classList.toggle('is-active', active);
-            if (active) link.setAttribute('aria-current', 'location');
-            else link.removeAttribute('aria-current');
+            if (active) {
+              link.setAttribute('aria-current', 'location');
+              openGroupForLink(link);
+            } else {
+              link.removeAttribute('aria-current');
+            }
           });
         };
 
@@ -1154,12 +1217,18 @@ import { guideSearchIndex } from '../data/guide-search';
         const toolbar = document.querySelector('.guide-toolbar');
 
         const updateActive = () => {
-          const offset = (header?.offsetHeight ?? 72) + (toolbar?.offsetHeight ?? 0) + 24;
-          let current = 0;
+          const offset = (header?.offsetHeight ?? 72) + (toolbar?.offsetHeight ?? 0) + 120;
+          let current = -1;
+          let currentTop = -Infinity;
           sections.forEach((section, index) => {
-            if (section && section.getBoundingClientRect().top <= offset) current = index;
+            if (!section) return;
+            const top = section.getBoundingClientRect().top;
+            if (top <= offset && top > currentTop) {
+              currentTop = top;
+              current = index;
+            }
           });
-          setActive(current);
+          setActive(current < 0 ? 0 : current);
         };
 
         let ticking = false;
@@ -1181,13 +1250,6 @@ import { guideSearchIndex } from '../data/guide-search';
       const input = document.querySelector('[data-guide-search]');
       const results = document.querySelector('[data-guide-results]');
       if (!input || !results) return;
-
-      results.addEventListener('click', (event) => {
-        const link = event.target.closest?.('a');
-        if (link?.getAttribute('href') === '#commands') {
-          showCommandCategory('commands-common');
-        }
-      });
 
       let extraIndex = [];
       const indexElement = document.getElementById('guide-search-index');

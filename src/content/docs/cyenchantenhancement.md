@@ -43,7 +43,6 @@ CyEnchantEnhancement（ESystemGUI）是一个附魔强化系统。玩家把装�
 入口：
 
 - 主城菜单 →「物品强化」
-- `/esystem open`
 - `/cee open`
 
 面板操作：
@@ -188,7 +187,7 @@ CyEnchantEnhancement 当前版本**没有公开 Java API**，也**没有注册�
 
 ### 强化面板打不开？
 
-确认玩家有 `cyenchantenhancement.open`，并检查主城菜单命令是否指向 `/esystem open` 或 `/cee open`。
+确认玩家有 `cyenchantenhancement.open`，并检查主城菜单命令是否指向 `/cee open`。
 
 ### 强化书/保护石不消耗？
 
