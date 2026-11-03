@@ -6,7 +6,6 @@ const path = Astro.url.pathname;
 const isHome = path === '/' || path === '';
 const isGuide = path.startsWith('/guide');
 const isDownload = path.startsWith('/download');
-const isPlugins = path.startsWith('/plugins') || path.startsWith('/docs');
 ---
 
 <header class="site-header" data-header>
@@ -42,9 +41,8 @@ const isPlugins = path.startsWith('/plugins') || path.startsWith('/docs');
         下载启动器
       </a>
       <a
-        href="/plugins"
-        class:list={['nav-link', { 'is-active': isPlugins }]}
-        aria-current={isPlugins ? 'page' : undefined}
+        href="https://license.mc33.top/"
+        class="nav-link"
       >
         获取插件
       </a>
